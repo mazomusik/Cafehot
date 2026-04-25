@@ -27,25 +27,15 @@ export const appRouter = router({
         const result = await db.select().from(modelProfile).limit(1);
         if (result.length === 0) {
           const defaultProfile = {
-            name: "Modelo",
-            age: 24,
-            city: "Medellín, Colombia",
-            bio: "Contenido exclusivo",
-            profilePhoto: null,
-            coverPhoto: null,
-            subscriptionPrice: 8000,
-            subscribers: 8352,
-            whatsappNumber: "+57 300 1234567",
-            breKey: "8248086081",
+            name: "Modelo", age: 24, city: "Medellín", bio: "Bio",
+            profilePhoto: null, coverPhoto: null, subscriptionPrice: 8000,
+            subscribers: 8352, whatsappNumber: "+57", breKey: "8248086081",
           };
           await db.insert(modelProfile).values(defaultProfile);
           return defaultProfile;
         }
         return result[0];
-      } catch (error) {
-        console.error("Error getting profile:", error);
-        throw error;
-      }
+      } catch (error) { throw error; }
     }),
 
     updateProfile: publicProcedure
@@ -59,8 +49,6 @@ export const appRouter = router({
         subscriptionPrice: z.number().optional(),
         whatsappNumber: z.string().optional(),
         breKey: z.string().optional(),
-        isLive: z.boolean().optional(),
-        lastLiveTime: z.string().nullable().optional(),
       }))
       .mutation(async ({ input }) => {
         try {
@@ -69,7 +57,7 @@ export const appRouter = router({
 
           const updates: any = { ...input };
 
-          // Si viene una imagen nueva (en base64), la subimos a Cloudinary
+          // SUBIDA A CLOUDINARY: Procesamos si el string es una imagen nueva
           if (input.profilePhoto && input.profilePhoto.startsWith("data:image")) {
             const uploaded = await storagePut(input.profilePhoto, "profiles");
             updates.profilePhoto = uploaded.url;
@@ -84,9 +72,9 @@ export const appRouter = router({
 
           await db.update(modelProfile).set(updates).where(eq(modelProfile.id, profiles[0].id));
           return { success: true };
-        } catch (error) {
-          console.error("Error updating profile:", error);
-          throw error;
+        } catch (error: any) {
+          console.error("Server Error:", error.message);
+          throw new Error("Error en el servidor: " + error.message);
         }
       }),
 
@@ -111,64 +99,40 @@ export const appRouter = router({
     }),
 
     addItem: publicProcedure
-      .input(z.object({
-        id: z.string(),
-        uri: z.string(),
-        type: z.enum(["photo", "video"]),
-        isPrivate: z.boolean().optional(),
-      }))
+      .input(z.object({ id: z.string(), uri: z.string(), type: z.enum(["photo", "video"]), isPrivate: z.boolean().optional() }))
       .mutation(async ({ input }) => {
         const db = await getDb();
         if (!db) throw new Error("Database not available");
-
         let finalUri = input.uri;
-        // Si es una imagen nueva, subir a Cloudinary
-        if (input.uri.startsWith("data:image") || input.uri.startsWith("data:video")) {
+        if (input.uri.startsWith("data:image")) {
           const uploaded = await storagePut(input.uri, "gallery");
           finalUri = uploaded.url;
         }
-
-        await db.insert(galleryItems).values({
-          id: input.id,
-          uri: finalUri,
-          type: input.type,
-          isPrivate: input.isPrivate ?? true,
-        });
+        await db.insert(galleryItems).values({ id: input.id, uri: finalUri, type: input.type, isPrivate: input.isPrivate ?? true });
         return { success: true };
       }),
 
-    deleteItem: publicProcedure
-      .input(z.object({ id: z.string() }))
-      .mutation(async ({ input }) => {
-        const db = await getDb();
-        if (!db) throw new Error("Database not available");
-        await db.delete(galleryItems).where(eq(galleryItems.id, input.id));
-        return { success: true };
-      }),
+    deleteItem: publicProcedure.input(z.object({ id: z.string() })).mutation(async ({ input }) => {
+      const db = await getDb();
+      if (!db) throw new Error("Database not available");
+      await db.delete(galleryItems).where(eq(galleryItems.id, input.id));
+      return { success: true };
+    }),
   }),
 
   subscription: router({
-    checkSubscription: publicProcedure
-      .input(z.object({ deviceId: z.string() }))
-      .query(async ({ input }) => {
-        const db = await getDb();
-        if (!db) return false;
-        const result = await db.select().from(subscribers).where(eq(subscribers.deviceId, input.deviceId)).limit(1);
-        return result.length > 0 ? result[0].isSubscribed : false;
-      }),
-
-    subscribe: publicProcedure
-      .input(z.object({ deviceId: z.string() }))
-      .mutation(async ({ input }) => {
-        const db = await getDb();
-        if (!db) throw new Error("Database not available");
-        await db.insert(subscribers).values({
-          deviceId: input.deviceId,
-          isSubscribed: true,
-          subscriptionDate: new Date(),
-        }).onDuplicateKeyUpdate({ set: { isSubscribed: true } });
-        return { success: true };
-      }),
+    checkSubscription: publicProcedure.input(z.object({ deviceId: z.string() })).query(async ({ input }) => {
+      const db = await getDb();
+      if (!db) return false;
+      const result = await db.select().from(subscribers).where(eq(subscribers.deviceId, input.deviceId)).limit(1);
+      return result.length > 0 ? result[0].isSubscribed : false;
+    }),
+    subscribe: publicProcedure.input(z.object({ deviceId: z.string() })).mutation(async ({ input }) => {
+      const db = await getDb();
+      if (!db) throw new Error("Database not available");
+      await db.insert(subscribers).values({ deviceId: input.deviceId, isSubscribed: true, subscriptionDate: new Date() }).onDuplicateKeyUpdate({ set: { isSubscribed: true } });
+      return { success: true };
+    }),
   }),
 });
 
