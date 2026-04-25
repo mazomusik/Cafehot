@@ -1,4 +1,4 @@
-import { useCallback, useMemo } from "react";
+import { useCallback } from "react";
 import { trpc } from "@/lib/trpc";
 import * as Device from "expo-device";
 
@@ -26,20 +26,18 @@ export interface GalleryItem {
 
 export function useAppState() {
   const utils = trpc.useUtils();
-  const deviceId = Device.osInternalBuildId || "default-device-id";
+  const deviceId = Device.osInternalBuildId || "dev-id";
 
-  // 1. Obtener datos del servidor con React Query (Sync automático)
   const { data: profile, isLoading: loadingProfile } = trpc.model.getProfile.useQuery(undefined, {
-    refetchInterval: 10000, // Refrescar cada 10 segundos para "tiempo real" básico
+    refetchInterval: 5000, // Cada 5 segundos para que sea "tiempo real"
   });
 
   const { data: gallery, isLoading: loadingGallery } = trpc.gallery.getGallery.useQuery(undefined, {
-    refetchInterval: 30000,
+    refetchInterval: 10000,
   });
 
   const { data: isSubscribed } = trpc.subscription.checkSubscription.useQuery({ deviceId });
 
-  // 2. Mutaciones para actualizar datos en la base de datos
   const updateProfileMutation = trpc.model.updateProfile.useMutation({
     onSuccess: () => utils.model.getProfile.invalidate(),
   });
@@ -63,7 +61,6 @@ export function useAppState() {
     },
   });
 
-  // 3. Wrappers para mantener la compatibilidad con el resto de la app
   const updateProfile = useCallback(async (updates: Partial<ModelProfile>) => {
     await updateProfileMutation.mutateAsync(updates as any);
   }, [updateProfileMutation]);
@@ -84,21 +81,24 @@ export function useAppState() {
     await subscribeMutation.mutateAsync({ deviceId });
   }, [subscribeMutation, deviceId]);
 
+  // VALORES DE RESPALDO (Para que la app nunca se vea vacía)
+  const defaultProfile: ModelProfile = {
+    name: "Cargando...",
+    age: 24,
+    city: "Colombia",
+    bio: "",
+    profilePhoto: null,
+    coverPhoto: null,
+    subscriptionPrice: 8000,
+    subscribers: 8352,
+    whatsappNumber: "+57",
+    breKey: "",
+    isLive: false,
+    lastLiveTime: null,
+  };
+
   return {
-    profile: profile || {
-      name: "Cargando...",
-      age: 0,
-      city: "",
-      bio: "",
-      profilePhoto: null,
-      coverPhoto: null,
-      subscriptionPrice: 0,
-      subscribers: 0,
-      whatsappNumber: "",
-      breKey: "",
-      isLive: false,
-      lastLiveTime: null,
-    },
+    profile: profile || defaultProfile,
     gallery: gallery || [],
     isSubscribed: !!isSubscribed,
     loading: loadingProfile || loadingGallery,
