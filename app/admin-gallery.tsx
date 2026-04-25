@@ -1,184 +1,103 @@
-import { ScrollView, Text, View, Pressable, Alert, FlatList, Image } from "react-native";
+import { ScrollView, Text, View, Pressable, Alert, Image, ActivityIndicator } from "react-native";
 import { useState } from "react";
 import { useRouter } from "expo-router";
 import { ScreenContainer } from "@/components/screen-container";
 import { useApp } from "@/lib/app-context";
 import * as Haptics from "expo-haptics";
 import * as ImagePicker from "expo-image-picker";
+import * as FileSystem from "expo-file-system";
 
 export default function AdminGalleryScreen() {
   const router = useRouter();
-  const { gallery, deleteGalleryItem, updateGalleryItem, addGalleryItem } = useApp();
+  const { gallery, deleteGalleryItem, addGalleryItem } = useApp();
   const [loading, setLoading] = useState(false);
 
-  const handleDeleteItem = (id: string) => {
-    Alert.alert("Eliminar", "¿Estás seguro de que deseas eliminar este elemento?", [
-      {
-        text: "Cancelar",
-        onPress: () => {},
-        style: "cancel",
-      },
-      {
-        text: "Eliminar",
-        onPress: async () => {
-          Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
-          await deleteGalleryItem(id);
-          Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
-        },
-        style: "destructive",
-      },
-    ]);
-  };
-
-  const handleTogglePrivate = async (id: string, isPrivate: boolean) => {
-    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
-    await updateGalleryItem(id, { isPrivate: !isPrivate });
-  };
-
-  const handlePickMultipleImages = async () => {
+  const getBase64 = async (uri: string) => {
     try {
-      const { status } = await ImagePicker.requestMediaLibraryPermissionsAsync();
-      if (status !== "granted") {
-        Alert.alert("Permiso requerido", "Se necesita acceso a la galería para subir archivos");
-        return;
-      }
+      const base64 = await FileSystem.readAsStringAsync(uri, {
+        encoding: FileSystem.EncodingType.Base64,
+      });
+      return `data:image/jpeg;base64,${base64}`;
+    } catch (e) {
+      return uri;
+    }
+  };
 
-      setLoading(true);
-
+  const handlePickAndUpload = async () => {
+    try {
       const result = await ImagePicker.launchImageLibraryAsync({
-        mediaTypes: ImagePicker.MediaTypeOptions.All,
-        allowsEditing: false,
-        quality: 1,
-      } as any);
+        mediaTypes: ImagePicker.MediaTypeOptions.Images,
+        allowsEditing: true,
+        quality: 0.6,
+      });
 
-      if (!result.canceled && result.assets.length > 0) {
-        let successCount = 0;
-        let errorCount = 0;
+      if (!result.canceled) {
+        setLoading(true);
+        const base64 = await getBase64(result.assets[0].uri);
 
-        const validImageFormats = ["image/jpeg", "image/png", "image/webp", "image/gif"];
-        const validVideoFormats = ["video/mp4", "video/quicktime", "video/x-msvideo", "video/x-matroska"];
-        const allValidFormats = [...validImageFormats, ...validVideoFormats];
-
-        for (const asset of result.assets) {
-          const mimeType = asset.mimeType || "unknown";
-
-          if (!allValidFormats.includes(mimeType)) {
-            errorCount++;
-            continue;
-          }
-
-          const maxSize = 100 * 1024 * 1024;
-          if (asset.fileSize && asset.fileSize > maxSize) {
-            errorCount++;
-            continue;
-          }
-
-          const newItem = {
-            id: Date.now().toString() + Math.random(),
-            uri: asset.uri,
-            type: (validVideoFormats.includes(mimeType) ? "video" : "photo") as "video" | "photo",
-            isPrivate: true,
-          };
-
-          await addGalleryItem(newItem);
-          successCount++;
-        }
+        await addGalleryItem({
+          id: Date.now().toString(),
+          uri: base64,
+          type: "photo",
+          isPrivate: true,
+        });
 
         Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
-        Alert.alert(
-          "Subida completada",
-          `${successCount} archivo(s) agregado(s)${errorCount > 0 ? ` (${errorCount} rechazado(s))` : ""}`
-        );
+        Alert.alert("Éxito", "Foto subida a la nube correctamente");
       }
     } catch (error) {
-      console.error("Error picking images:", error);
-      Haptics.notificationAsync(Haptics.NotificationFeedbackType.Error);
-      Alert.alert("Error", "No se pudieron seleccionar los archivos. Intenta de nuevo.");
+      Alert.alert("Error", "No se pudo subir la imagen");
     } finally {
       setLoading(false);
     }
   };
 
-  const renderItem = ({ item }: { item: any }) => (
-    <View className="bg-surface rounded-lg p-4 mb-3 border border-border">
-      <View className="flex-row gap-4">
-        <Image
-          source={{ uri: item.uri }}
-          className="w-20 h-20 rounded-lg bg-gray-300"
-          resizeMode="cover"
-        />
-        <View className="flex-1 justify-between">
-          <View>
-            <Text className="text-sm font-semibold text-foreground capitalize">{item.type}</Text>
-            <Text className="text-xs text-muted mt-1">{item.isPrivate ? "Privado" : "Público"}</Text>
-          </View>
-          <View className="flex-row gap-2">
-            <Pressable
-              onPress={() => handleTogglePrivate(item.id, item.isPrivate)}
-              className="flex-1 bg-primary/20 rounded-lg py-2 px-3"
-            >
-              <Text className="text-xs font-semibold text-primary text-center">
-                {item.isPrivate ? "Hacer Público" : "Hacer Privado"}
-              </Text>
-            </Pressable>
-            <Pressable
-              onPress={() => handleDeleteItem(item.id)}
-              className="flex-1 bg-error/20 rounded-lg py-2 px-3"
-            >
-              <Text className="text-xs font-semibold text-error text-center">Eliminar</Text>
-            </Pressable>
-          </View>
-        </View>
-      </View>
-    </View>
-  );
-
   return (
     <ScreenContainer className="bg-background">
-      <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: 20 }}>
-        {/* Header */}
-        <View className="flex-row items-center justify-between px-4 py-4 border-b border-border">
-          <Text className="text-xl font-bold text-foreground">Galería</Text>
-          <Pressable onPress={() => router.back()} disabled={loading} className="p-2">
-            <Text className="text-2xl">✕</Text>
-          </Pressable>
-        </View>
+      <View className="flex-row items-center justify-between px-4 py-4 border-b border-border bg-white">
+        <Text className="text-xl font-bold text-foreground">Gestionar Galería</Text>
+        <Pressable onPress={() => router.back()} disabled={loading}>
+          <Text className="text-2xl text-foreground font-bold">✕</Text>
+        </Pressable>
+      </View>
 
-        {/* Add Button */}
-        <View className="px-4 py-6">
-          <Pressable
-            onPress={handlePickMultipleImages}
-            disabled={loading}
-            className="w-full rounded-full py-4 overflow-hidden"
-            style={({ pressed }) => [
-              {
-                backgroundColor: pressed && !loading ? "#8B4BA8" : "#9B59B6",
-                opacity: loading ? 0.7 : 1,
-              },
-            ]}
-          >
-            <Text className="text-center text-white font-bold text-lg">
-              {loading ? "Cargando..." : "+ Agregar Fotos o Videos"}
-            </Text>
-          </Pressable>
-          <Text className="text-center text-xs text-muted mt-2">Puedes seleccionar múltiples archivos a la vez</Text>
-        </View>
-
-        {/* Gallery List */}
-        <View className="px-4">
-          {gallery.length === 0 ? (
-            <View className="items-center py-8">
-              <Text className="text-muted text-sm">No hay fotos o videos en la galería</Text>
-            </View>
+      <ScrollView className="flex-1 px-4 py-4">
+        <Pressable
+          onPress={handlePickAndUpload}
+          disabled={loading}
+          className="w-full bg-primary py-4 rounded-xl items-center mb-6 shadow-sm"
+        >
+          {loading ? (
+            <ActivityIndicator color="white" />
           ) : (
-            <FlatList
-              data={gallery}
-              renderItem={renderItem}
-              keyExtractor={(item) => item.id}
-              scrollEnabled={false}
-            />
+            <Text className="text-white font-bold text-lg">+ Subir Nueva Foto</Text>
           )}
+        </Pressable>
+
+        <Text className="text-lg font-bold text-foreground mb-4">Tus fotos en la nube</Text>
+
+        <View className="flex-row flex-wrap justify-between">
+          {gallery.map((item) => (
+            <View key={item.id} className="w-[48%] mb-4 bg-white rounded-xl overflow-hidden border border-border shadow-sm">
+              <Image source={{ uri: item.uri }} className="w-full h-40" resizeMode="cover" />
+              <View className="p-2 flex-row justify-between items-center">
+                <Text className="text-[10px] text-muted">{item.isPrivate ? "🔒 Privado" : "🔓 Público"}</Text>
+                <Pressable
+                  onPress={() => deleteGalleryItem(item.id)}
+                  className="bg-red-100 p-2 rounded-full"
+                >
+                  <Text className="text-red-600 text-[10px] font-bold">Borrar</Text>
+                </Pressable>
+              </View>
+            </View>
+          ))}
         </View>
+
+        {gallery.length === 0 && (
+          <View className="items-center py-20">
+            <Text className="text-muted">No hay fotos todavía</Text>
+          </View>
+        )}
       </ScrollView>
     </ScreenContainer>
   );
