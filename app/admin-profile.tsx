@@ -10,30 +10,38 @@ export default function AdminProfileScreen() {
   const router = useRouter();
   const { profile, updateProfile, loading } = useApp();
 
+  // Estados locales: para que veas los cambios al instante sin internet
   const [name, setName] = useState(profile.name);
-  const [age, setAge] = useState(profile.age.toString());
+  const [age, setAge] = useState(profile.age?.toString() || "");
   const [city, setCity] = useState(profile.city);
   const [bio, setBio] = useState(profile.bio || "");
   const [profilePhoto, setProfilePhoto] = useState(profile.profilePhoto);
   const [coverPhoto, setCoverPhoto] = useState(profile.coverPhoto);
   const [saving, setSaving] = useState(false);
+  const [isDataInitialized, setIsDataInitialized] = useState(false);
 
-  // Sincronizar estado local con datos de la nube cuando carguen
+  // Cargamos los datos de la nube una sola vez al entrar
   useEffect(() => {
-    if (!loading && profile.name !== "Cargando...") {
+    if (!loading && !isDataInitialized && profile.name !== "Cargando...") {
       setName(profile.name);
       setAge(profile.age.toString());
       setCity(profile.city);
       setBio(profile.bio || "");
       setProfilePhoto(profile.profilePhoto);
       setCoverPhoto(profile.coverPhoto);
+      setIsDataInitialized(true);
     }
   }, [loading, profile]);
 
   const getBase64 = async (uri: string) => {
-    if (uri.startsWith("data:")) return uri;
-    const base64 = await FileSystem.readAsStringAsync(uri, { encoding: FileSystem.EncodingType.Base64 });
-    return `data:image/jpeg;base64,${base64}`;
+    if (!uri || uri.startsWith("data:") || uri.startsWith("http")) return uri;
+    try {
+      const base64 = await FileSystem.readAsStringAsync(uri, { encoding: FileSystem.EncodingType.Base64 });
+      return `data:image/jpeg;base64,${base64}`;
+    } catch (e) {
+      console.error("Error convirtiendo a base64:", e);
+      return uri;
+    }
   };
 
   const handlePickPhoto = async (type: "profile" | "cover") => {
@@ -45,9 +53,9 @@ export default function AdminProfileScreen() {
     });
 
     if (!result.canceled) {
-      const base64 = await getBase64(result.assets[0].uri);
-      if (type === "profile") setProfilePhoto(base64);
-      else setCoverPhoto(base64);
+      const localUri = result.assets[0].uri;
+      if (type === "profile") setProfilePhoto(localUri);
+      else setCoverPhoto(localUri);
     }
   };
 
@@ -55,65 +63,93 @@ export default function AdminProfileScreen() {
     if (saving) return;
     setSaving(true);
     try {
+      // PROCESO DE SUBIDA: Solo aquí usamos internet para mandar a Cloudinary
+      const finalProfilePhoto = await getBase64(profilePhoto || "");
+      const finalCoverPhoto = await getBase64(coverPhoto || "");
+
       await updateProfile({
         name,
-        age: parseInt(age),
+        age: parseInt(age) || 0,
         city,
         bio,
-        profilePhoto,
-        coverPhoto,
+        profilePhoto: finalProfilePhoto,
+        coverPhoto: finalCoverPhoto,
       });
-      Alert.alert("Éxito", "Cambios guardados globalmente");
+
+      Alert.alert("Éxito", "Todos los cambios se han guardado en la nube");
       router.back();
     } catch (e) {
-      Alert.alert("Error", "No se pudo conectar con Railway");
+      Alert.alert("Error", "No se pudo conectar con el servidor. Verifica tu internet.");
     } finally {
       setSaving(false);
     }
   };
 
-  if (loading && name === "Cargando...") {
-    return (
-      <ScreenContainer className="bg-background justify-center items-center">
-        <ActivityIndicator size="large" color="#9B59B6" />
-        <Text className="mt-4 text-muted">Obteniendo datos de la nube...</Text>
-      </ScreenContainer>
-    );
-  }
-
   return (
     <ScreenContainer className="bg-background">
       <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: 40 }}>
+        {/* Encabezado sin bloqueos */}
         <View className="p-4 border-b border-border bg-white flex-row justify-between items-center">
-          <Text className="text-xl font-bold">Editar Perfil Real</Text>
-          <Pressable onPress={() => router.back()}><Text className="text-2xl">✕</Text></Pressable>
+          <Text className="text-xl font-bold text-foreground">Panel de Edición Local</Text>
+          <Pressable onPress={() => router.back()} disabled={saving}><Text className="text-2xl">✕</Text></Pressable>
         </View>
 
         <View className="p-4 gap-6">
+          {/* Foto de Portada */}
           <View>
-            <Text className="text-xs font-bold text-muted mb-2">FOTO DE PORTADA</Text>
-            <Pressable onPress={() => handlePickPhoto("cover")} className="w-full h-40 bg-surface rounded-xl overflow-hidden border border-border items-center justify-center">
-              {coverPhoto ? <Image source={{ uri: coverPhoto }} className="w-full h-full" /> : <Text>+</Text>}
+            <Text className="text-[10px] font-bold text-muted mb-2 uppercase">Foto de Portada</Text>
+            <Pressable onPress={() => handlePickPhoto("cover")} className="w-full h-44 bg-surface rounded-2xl overflow-hidden border-2 border-dashed border-border items-center justify-center">
+              {coverPhoto ? <Image source={{ uri: coverPhoto }} className="w-full h-full" resizeMode="cover" /> : <Text className="text-muted">Elegir Portada</Text>}
             </Pressable>
           </View>
 
-          <View className="items-center">
-            <Text className="text-xs font-bold text-muted mb-2">FOTO DE PERFIL</Text>
-            <Pressable onPress={() => handlePickPhoto("profile")} className="w-32 h-32 rounded-full bg-surface border-4 border-white shadow-sm overflow-hidden items-center justify-center">
-              {profilePhoto ? <Image source={{ uri: profilePhoto }} className="w-full h-full" /> : <Text>+</Text>}
+          {/* Foto de Perfil */}
+          <View className="items-center -mt-16">
+            <Pressable onPress={() => handlePickPhoto("profile")} className="w-32 h-32 rounded-full bg-surface border-4 border-white shadow-lg overflow-hidden items-center justify-center">
+              {profilePhoto ? <Image source={{ uri: profilePhoto }} className="w-full h-full" resizeMode="cover" /> : <Text className="text-muted">Foto</Text>}
             </Pressable>
+            <Text className="text-[10px] font-bold text-muted mt-2 uppercase">Foto de Perfil</Text>
           </View>
 
+          {/* Campos de texto */}
           <View className="gap-4">
-            <TextInput value={name} onChangeText={setName} placeholder="Nombre" className="bg-white p-4 rounded-xl border border-border" />
-            <TextInput value={age} onChangeText={setAge} keyboardType="number-pad" placeholder="Edad" className="bg-white p-4 rounded-xl border border-border" />
-            <TextInput value={city} onChangeText={setCity} placeholder="Ciudad" className="bg-white p-4 rounded-xl border border-border" />
-            <TextInput value={bio} onChangeText={setBio} multiline placeholder="Bio" className="bg-white p-4 rounded-xl border border-border h-32" />
+            <View>
+              <Text className="text-[10px] font-bold text-primary ml-2 mb-1 uppercase">Nombre Artístico</Text>
+              <TextInput value={name} onChangeText={setName} placeholder="Nombre" className="bg-surface p-4 rounded-2xl border border-border text-foreground" />
+            </View>
+            <View className="flex-row gap-4">
+              <View className="flex-1">
+                <Text className="text-[10px] font-bold text-primary ml-2 mb-1 uppercase">Edad</Text>
+                <TextInput value={age} onChangeText={setAge} keyboardType="number-pad" className="bg-surface p-4 rounded-2xl border border-border text-foreground" />
+              </View>
+              <View className="flex-2">
+                <Text className="text-[10px] font-bold text-primary ml-2 mb-1 uppercase">Ciudad</Text>
+                <TextInput value={city} onChangeText={setCity} className="bg-surface p-4 rounded-2xl border border-border text-foreground" />
+              </View>
+            </View>
+            <View>
+              <Text className="text-[10px] font-bold text-primary ml-2 mb-1 uppercase">Biografía</Text>
+              <TextInput value={bio} onChangeText={setBio} multiline placeholder="Escribe tu bio..." className="bg-surface p-4 rounded-2xl border border-border text-foreground h-32" textAlignVertical="top" />
+            </View>
           </View>
 
-          <Pressable onPress={handleSave} disabled={saving} className="bg-primary p-4 rounded-full items-center shadow-md">
-            {saving ? <ActivityIndicator color="white" /> : <Text className="text-white font-bold text-lg">Guardar Cambios Globales</Text>}
+          {/* Botón Guardar - Solo aquí se sincroniza */}
+          <Pressable
+            onPress={handleSave}
+            disabled={saving}
+            className={`p-5 rounded-full items-center shadow-lg ${saving ? 'bg-gray-400' : 'bg-primary'}`}
+          >
+            {saving ? (
+              <View className="flex-row items-center gap-2">
+                <ActivityIndicator color="white" />
+                <Text className="text-white font-bold text-lg">Guardando en la nube...</Text>
+              </View>
+            ) : (
+              <Text className="text-white font-bold text-lg">💾 GUARDAR TODO EN LA NUBE</Text>
+            )}
           </Pressable>
+
+          <Text className="text-center text-[10px] text-muted">Los cambios se verán en todos los dispositivos al guardar.</Text>
         </View>
       </ScrollView>
     </ScreenContainer>
