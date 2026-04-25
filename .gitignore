@@ -1,0 +1,29 @@
+# Dependencias
+node_modules/
+.pnpm-store/
+
+# Expo
+.expo/
+dist/
+web-build/
+
+# Configuración y claves (MUY IMPORTANTE)
+.env
+.env.local
+.env.*.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.manus-logs/
+
+# IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Sistema
+.DS_Store
+Thumbs.db
