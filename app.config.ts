@@ -1,4 +1,3 @@
-// Load environment variables with proper priority (system > .env)
 import "./scripts/load-env.js";
 import type { ExpoConfig } from "expo/config";
 
@@ -19,25 +18,15 @@ const bundleId =
 const timestamp = bundleId.split(".").pop()?.replace(/^t/, "") ?? "";
 const schemeFromBundleId = `manus${timestamp}`;
 
-const env = {
-  appName: "CafeHot",
-  appSlug: "cafehot",
-  logoUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663589316265/GxyHcWmTGZWBm3pj2DLrtb/icon-NfKbkT5Z8bF8H6RNQFXsbz.webp",
-  scheme: schemeFromBundleId,
-  iosBundleId: bundleId,
-  androidPackage: bundleId,
-};
-
 const config: ExpoConfig = {
-  name: env.appName,
-  slug: env.appSlug,
+  name: "CafeHot",
+  slug: "cafehot",
   version: "1.0.0",
   orientation: "portrait",
   icon: "./assets/images/icon.png",
-  scheme: env.scheme,
-  userInterfaceStyle: "automatic",
+  scheme: schemeFromBundleId,
+  userInterfaceStyle: "light",
   newArchEnabled: true,
-  // ESTO ES LO QUE FALTABA PARA VINCULAR CON EXPO
   extra: {
     eas: {
       projectId: "16635971-0720-4970-8062-52b8edd29e43"
@@ -45,73 +34,29 @@ const config: ExpoConfig = {
   },
   ios: {
     supportsTablet: true,
-    bundleIdentifier: env.iosBundleId,
-    "infoPlist": {
-        "ITSAppUsesNonExemptEncryption": false
-      }
+    bundleIdentifier: bundleId,
   },
   android: {
     adaptiveIcon: {
-      backgroundColor: "#E6F4FE",
+      backgroundColor: "#FFFFFF",
       foregroundImage: "./assets/images/android-icon-foreground.png",
-      backgroundImage: "./assets/images/android-icon-background.png",
-      monochromeImage: "./assets/images/android-icon-monochrome.png",
     },
-    edgeToEdgeEnabled: true,
-    predictiveBackGestureEnabled: false,
-    package: env.androidPackage,
-    permissions: ["POST_NOTIFICATIONS"],
-    intentFilters: [
-      {
-        action: "VIEW",
-        autoVerify: true,
-        data: [
-          {
-            scheme: env.scheme,
-            host: "*",
-          },
-        ],
-        category: ["BROWSABLE", "DEFAULT"],
-      },
-    ],
-  },
-  web: {
-    bundler: "metro",
-    output: "static",
-    favicon: "./assets/images/favicon.png",
+    package: bundleId,
+    permissions: ["READ_EXTERNAL_STORAGE", "WRITE_EXTERNAL_STORAGE", "CAMERA"],
   },
   plugins: [
     "expo-router",
     [
-      "expo-audio",
+      "expo-image-picker",
       {
-        microphonePermission: "Allow $(PRODUCT_NAME) to access your microphone.",
-      },
+        photosPermission: "La app necesita acceso a tus fotos para que puedas subirlas al perfil."
+      }
     ],
-    [
-      "expo-video",
-      {
-        supportsBackgroundPlayback: true,
-        supportsPictureInPicture: true,
-      },
-    ],
-    [
-      "expo-splash-screen",
-      {
-        image: "./assets/images/splash-icon.png",
-        imageWidth: 200,
-        resizeMode: "contain",
-        backgroundColor: "#ffffff",
-        dark: {
-          backgroundColor: "#000000",
-        },
-      },
-    ],
+    "expo-file-system",
     [
       "expo-build-properties",
       {
         android: {
-          buildArchs: ["armeabi-v7a", "arm64-v8a"],
           minSdkVersion: 24,
         },
       },
