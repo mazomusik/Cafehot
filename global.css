@@ -1,3 +1,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --primary: 283 39% 53%; /* #9B59B6 */
+    --primary-foreground: 210 40% 98%;
+    --surface: 270 100% 98%; /* #F8F4FF */
+    --border: 277 59% 90%; /* #E8D5F5 */
+    --muted: 215.4 16.3% 46.9%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 340 82% 75%; /* #F48FB1 */
+    --success: 142 70% 45%;
+  }
+}
+
+.bg-background { background-color: #FFFFFF; }
+.text-foreground { color: #1A1A2E; }
+.bg-primary { background-color: #9B59B6; }
+.text-white { color: #FFFFFF; }
+.bg-surface { background-color: #F8F4FF; }
+.border-border { border-color: #E8D5F5; }
+.text-muted { color: #6B7280; }

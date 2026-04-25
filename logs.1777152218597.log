@@ -1,0 +1,1001 @@
+2026-04-25T21:19:55.256509884Z [err]  [Auth] Missing session cookie
+2026-04-25T21:19:55.263093802Z [err]  Error getting profile: DrizzleQueryError: Failed query: select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit ?
+2026-04-25T21:19:55.263101369Z [err]  params: 1
+2026-04-25T21:19:55.263101524Z [err]    params: [ 1 ],
+2026-04-25T21:19:55.263105117Z [err]      at MySql2PreparedQuery.queryWithCache (file:///app/node_modules/drizzle-orm/mysql-core/session.js:25:15)
+2026-04-25T21:19:55.263110053Z [err]      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-04-25T21:19:55.263113226Z [err]    cause: Error: Table 'railway.modelProfile' doesn't exist
+2026-04-25T21:19:55.263115776Z [err]      at async MySql2PreparedQuery.execute (file:///app/node_modules/drizzle-orm/mysql2/session.js:78:20)
+2026-04-25T21:19:55.263120383Z [err]      at async procedure (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:281:18)
+2026-04-25T21:19:55.263123975Z [err]      at async file:///app/dist/index.js:761:24
+2026-04-25T21:19:55.263128452Z [err]      at async resolveMiddleware (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:221:17)
+2026-04-25T21:19:55.263131878Z [err]      at async file:///app/node_modules/@trpc/server/dist/resolveResponse-D7zvnoIM.mjs:1948:18
+2026-04-25T21:19:55.263133055Z [err]      at async callRecursive (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:256:18)
+2026-04-25T21:19:55.263137302Z [err]      at async Promise.all (index 0)
+2026-04-25T21:19:55.263140877Z [err]      at async resolveResponse (file:///app/node_modules/@trpc/server/dist/resolveResponse-D7zvnoIM.mjs:2138:20) {
+2026-04-25T21:19:55.263144491Z [err]    query: 'select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit ?',
+2026-04-25T21:19:55.264553953Z [err]        at PromisePool.query (/app/node_modules/mysql2/lib/promise/pool.js:36:22)
+2026-04-25T21:19:55.264562033Z [err]        at file:///app/node_modules/drizzle-orm/mysql2/session.js:79:27
+2026-04-25T21:19:55.264567716Z [err]        at MySql2PreparedQuery.queryWithCache (file:///app/node_modules/drizzle-orm/mysql-core/session.js:23:22)
+2026-04-25T21:19:55.264572642Z [err]        at MySql2PreparedQuery.execute (file:///app/node_modules/drizzle-orm/mysql2/session.js:78:31)
+2026-04-25T21:19:55.264576457Z [err]        at MySqlSelectBase.execute (file:///app/node_modules/drizzle-orm/mysql-core/query-builders/select.js:805:27)
+2026-04-25T21:19:55.264579972Z [err]        at MySqlSelectBase.then (file:///app/node_modules/drizzle-orm/query-promise.js:21:17)
+2026-04-25T21:19:55.264583467Z [err]        at process.processTicksAndRejections (node:internal/process/task_queues:103:5) {
+2026-04-25T21:19:55.264586696Z [err]      code: 'ER_NO_SUCH_TABLE',
+2026-04-25T21:19:55.264589763Z [err]      errno: 1146,
+2026-04-25T21:19:55.264593232Z [err]      sql: 'select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit 1',
+2026-04-25T21:19:55.264596974Z [err]      sqlState: '42S02',
+2026-04-25T21:19:55.264600580Z [err]      sqlMessage: "Table 'railway.modelProfile' doesn't exist"
+2026-04-25T21:19:55.264603588Z [err]    }
+2026-04-25T21:19:55.264607333Z [err]  }
+2026-04-25T21:19:56.844858667Z [err]  [Auth] Missing session cookie
+2026-04-25T21:19:56.844864041Z [err]  Error getting profile: DrizzleQueryError: Failed query: select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit ?
+2026-04-25T21:19:56.844868815Z [err]  params: 1
+2026-04-25T21:19:56.844873533Z [err]      at MySql2PreparedQuery.queryWithCache (file:///app/node_modules/drizzle-orm/mysql-core/session.js:25:15)
+2026-04-25T21:19:56.844878413Z [err]      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-04-25T21:19:56.844883258Z [err]      at async MySql2PreparedQuery.execute (file:///app/node_modules/drizzle-orm/mysql2/session.js:78:20)
+2026-04-25T21:19:56.844887793Z [err]      at async file:///app/dist/index.js:761:24
+2026-04-25T21:19:56.844892076Z [err]      at async resolveMiddleware (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:221:17)
+2026-04-25T21:19:56.844896067Z [err]      at async callRecursive (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:256:18)
+2026-04-25T21:19:56.844900007Z [err]      at async procedure (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:281:18)
+2026-04-25T21:19:56.844903804Z [err]      at async file:///app/node_modules/@trpc/server/dist/resolveResponse-D7zvnoIM.mjs:1948:18
+2026-04-25T21:19:56.844908082Z [err]      at async Promise.all (index 0)
+2026-04-25T21:19:56.844912520Z [err]      at async resolveResponse (file:///app/node_modules/@trpc/server/dist/resolveResponse-D7zvnoIM.mjs:2138:20) {
+2026-04-25T21:19:56.844916327Z [err]    query: 'select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit ?',
+2026-04-25T21:19:56.844920465Z [err]    params: [ 1 ],
+2026-04-25T21:19:56.845609152Z [err]    cause: Error: Table 'railway.modelProfile' doesn't exist
+2026-04-25T21:19:56.845613833Z [err]        at PromisePool.query (/app/node_modules/mysql2/lib/promise/pool.js:36:22)
+2026-04-25T21:19:56.845618056Z [err]        at file:///app/node_modules/drizzle-orm/mysql2/session.js:79:27
+2026-04-25T21:19:56.845621229Z [err]        at MySql2PreparedQuery.queryWithCache (file:///app/node_modules/drizzle-orm/mysql-core/session.js:23:22)
+2026-04-25T21:19:56.845626031Z [err]        at MySql2PreparedQuery.execute (file:///app/node_modules/drizzle-orm/mysql2/session.js:78:31)
+2026-04-25T21:19:56.845629533Z [err]        at MySqlSelectBase.execute (file:///app/node_modules/drizzle-orm/mysql-core/query-builders/select.js:805:27)
+2026-04-25T21:19:56.845633088Z [err]        at MySqlSelectBase.then (file:///app/node_modules/drizzle-orm/query-promise.js:21:17)
+2026-04-25T21:19:56.845636322Z [err]        at process.processTicksAndRejections (node:internal/process/task_queues:103:5) {
+2026-04-25T21:19:56.845639060Z [err]      code: 'ER_NO_SUCH_TABLE',
+2026-04-25T21:19:56.845642125Z [err]      errno: 1146,
+2026-04-25T21:19:56.845645106Z [err]      sql: 'select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit 1',
+2026-04-25T21:19:56.845648437Z [err]      sqlState: '42S02',
+2026-04-25T21:19:56.845651815Z [err]      sqlMessage: "Table 'railway.modelProfile' doesn't exist"
+2026-04-25T21:19:56.845655282Z [err]    }
+2026-04-25T21:19:56.845658979Z [err]  }
+2026-04-25T21:20:16.527988032Z [err]      at async file:///app/dist/index.js:761:24
+2026-04-25T21:20:16.527994855Z [err]      at async resolveMiddleware (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:221:17)
+2026-04-25T21:20:16.527999509Z [err]      at async callRecursive (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:256:18)
+2026-04-25T21:20:16.528001501Z [err]  [Auth] Missing session cookie
+2026-04-25T21:20:16.528005750Z [err]      at async procedure (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:281:18)
+2026-04-25T21:20:16.528008400Z [err]  Error getting profile: DrizzleQueryError: Failed query: select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit ?
+2026-04-25T21:20:16.528011998Z [err]      at async file:///app/node_modules/@trpc/server/dist/resolveResponse-D7zvnoIM.mjs:1948:18
+2026-04-25T21:20:16.528014489Z [err]  params: 1
+2026-04-25T21:20:16.528018922Z [err]      at async Promise.all (index 0)
+2026-04-25T21:20:16.528019263Z [err]      at MySql2PreparedQuery.queryWithCache (file:///app/node_modules/drizzle-orm/mysql-core/session.js:25:15)
+2026-04-25T21:20:16.528025154Z [err]      at async resolveResponse (file:///app/node_modules/@trpc/server/dist/resolveResponse-D7zvnoIM.mjs:2138:20) {
+2026-04-25T21:20:16.528025846Z [err]      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-04-25T21:20:16.528031764Z [err]    query: 'select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit ?',
+2026-04-25T21:20:16.528032029Z [err]      at async MySql2PreparedQuery.execute (file:///app/node_modules/drizzle-orm/mysql2/session.js:78:20)
+2026-04-25T21:20:16.528035609Z [err]    params: [ 1 ],
+2026-04-25T21:20:16.529953773Z [err]    cause: Error: Table 'railway.modelProfile' doesn't exist
+2026-04-25T21:20:16.529958210Z [err]        at PromisePool.query (/app/node_modules/mysql2/lib/promise/pool.js:36:22)
+2026-04-25T21:20:16.529962230Z [err]        at file:///app/node_modules/drizzle-orm/mysql2/session.js:79:27
+2026-04-25T21:20:16.529965902Z [err]        at MySql2PreparedQuery.queryWithCache (file:///app/node_modules/drizzle-orm/mysql-core/session.js:23:22)
+2026-04-25T21:20:16.529968810Z [err]        at MySql2PreparedQuery.execute (file:///app/node_modules/drizzle-orm/mysql2/session.js:78:31)
+2026-04-25T21:20:16.529972237Z [err]        at MySqlSelectBase.execute (file:///app/node_modules/drizzle-orm/mysql-core/query-builders/select.js:805:27)
+2026-04-25T21:20:16.529975652Z [err]        at MySqlSelectBase.then (file:///app/node_modules/drizzle-orm/query-promise.js:21:17)
+2026-04-25T21:20:16.529978163Z [err]        at process.processTicksAndRejections (node:internal/process/task_queues:103:5) {
+2026-04-25T21:20:16.529981147Z [err]      code: 'ER_NO_SUCH_TABLE',
+2026-04-25T21:20:16.529983823Z [err]      errno: 1146,
+2026-04-25T21:20:16.529986482Z [err]      sql: 'select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit 1',
+2026-04-25T21:20:16.529990336Z [err]      sqlState: '42S02',
+2026-04-25T21:20:16.529993095Z [err]      sqlMessage: "Table 'railway.modelProfile' doesn't exist"
+2026-04-25T21:20:16.529996120Z [err]    }
+2026-04-25T21:20:16.529998762Z [err]  }
+2026-04-25T21:20:16.530001603Z [err]  [Auth] Missing session cookie
+2026-04-25T21:20:16.530004588Z [err]  Error getting profile: DrizzleQueryError: Failed query: select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit ?
+2026-04-25T21:20:16.531721940Z [err]  params: 1
+2026-04-25T21:20:16.531729917Z [err]      at MySql2PreparedQuery.queryWithCache (file:///app/node_modules/drizzle-orm/mysql-core/session.js:25:15)
+2026-04-25T21:20:16.531734282Z [err]      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-04-25T21:20:16.531739777Z [err]      at async MySql2PreparedQuery.execute (file:///app/node_modules/drizzle-orm/mysql2/session.js:78:20)
+2026-04-25T21:20:16.531744222Z [err]      at async file:///app/dist/index.js:761:24
+2026-04-25T21:20:16.531748034Z [err]      at async resolveMiddleware (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:221:17)
+2026-04-25T21:20:16.531752304Z [err]      at async callRecursive (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:256:18)
+2026-04-25T21:20:16.531755559Z [err]      at async procedure (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:281:18)
+2026-04-25T21:20:16.531758748Z [err]      at async file:///app/node_modules/@trpc/server/dist/resolveResponse-D7zvnoIM.mjs:1948:18
+2026-04-25T21:20:16.531762119Z [err]      at async Promise.all (index 0)
+2026-04-25T21:20:16.531765582Z [err]      at async resolveResponse (file:///app/node_modules/@trpc/server/dist/resolveResponse-D7zvnoIM.mjs:2138:20) {
+2026-04-25T21:20:16.531768687Z [err]    query: 'select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit ?',
+2026-04-25T21:20:16.531771742Z [err]    params: [ 1 ],
+2026-04-25T21:20:16.531775068Z [err]    cause: Error: Table 'railway.modelProfile' doesn't exist
+2026-04-25T21:20:16.531778958Z [err]        at PromisePool.query (/app/node_modules/mysql2/lib/promise/pool.js:36:22)
+2026-04-25T21:20:16.531782757Z [err]        at file:///app/node_modules/drizzle-orm/mysql2/session.js:79:27
+2026-04-25T21:20:16.533740375Z [err]  }
+2026-04-25T21:20:16.533758646Z [err]        at MySql2PreparedQuery.queryWithCache (file:///app/node_modules/drizzle-orm/mysql-core/session.js:23:22)
+2026-04-25T21:20:16.533767494Z [err]        at MySql2PreparedQuery.execute (file:///app/node_modules/drizzle-orm/mysql2/session.js:78:31)
+2026-04-25T21:20:16.533772921Z [err]        at MySqlSelectBase.execute (file:///app/node_modules/drizzle-orm/mysql-core/query-builders/select.js:805:27)
+2026-04-25T21:20:16.533780262Z [err]        at MySqlSelectBase.then (file:///app/node_modules/drizzle-orm/query-promise.js:21:17)
+2026-04-25T21:20:16.533786459Z [err]        at process.processTicksAndRejections (node:internal/process/task_queues:103:5) {
+2026-04-25T21:20:16.533791669Z [err]      code: 'ER_NO_SUCH_TABLE',
+2026-04-25T21:20:16.533796009Z [err]      errno: 1146,
+2026-04-25T21:20:16.533800674Z [err]      sql: 'select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit 1',
+2026-04-25T21:20:16.533805043Z [err]      sqlState: '42S02',
+2026-04-25T21:20:16.533809400Z [err]      sqlMessage: "Table 'railway.modelProfile' doesn't exist"
+2026-04-25T21:20:16.533814198Z [err]    }
+2026-04-25T21:20:18.562821917Z [err]  [Auth] Missing session cookie
+2026-04-25T21:20:18.568456249Z [err]      at async MySql2PreparedQuery.execute (file:///app/node_modules/drizzle-orm/mysql2/session.js:78:20)
+2026-04-25T21:20:18.568456615Z [err]    cause: Error: Table 'railway.modelProfile' doesn't exist
+2026-04-25T21:20:18.568462473Z [err]      at async file:///app/dist/index.js:761:24
+2026-04-25T21:20:18.568465911Z [err]      at async resolveMiddleware (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:221:17)
+2026-04-25T21:20:18.568469339Z [err]      at async callRecursive (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:256:18)
+2026-04-25T21:20:18.568473071Z [err]      at async Promise.all (index 0)
+2026-04-25T21:20:18.568474014Z [err]      at async procedure (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:281:18)
+2026-04-25T21:20:18.568478419Z [err]      at async file:///app/node_modules/@trpc/server/dist/resolveResponse-D7zvnoIM.mjs:1948:18
+2026-04-25T21:20:18.568484270Z [err]      at async resolveResponse (file:///app/node_modules/@trpc/server/dist/resolveResponse-D7zvnoIM.mjs:2138:20) {
+2026-04-25T21:20:18.568489406Z [err]    query: 'select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit ?',
+2026-04-25T21:20:18.568493925Z [err]    params: [ 1 ],
+2026-04-25T21:20:18.568525126Z [err]  Error getting profile: DrizzleQueryError: Failed query: select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit ?
+2026-04-25T21:20:18.568528529Z [err]  params: 1
+2026-04-25T21:20:18.568532013Z [err]      at MySql2PreparedQuery.queryWithCache (file:///app/node_modules/drizzle-orm/mysql-core/session.js:25:15)
+2026-04-25T21:20:18.568535846Z [err]      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-04-25T21:20:18.569823610Z [err]    }
+2026-04-25T21:20:18.569829644Z [err]      errno: 1146,
+2026-04-25T21:20:18.569831676Z [err]  }
+2026-04-25T21:20:18.569835217Z [err]      sql: 'select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit 1',
+2026-04-25T21:20:18.569838501Z [err]      sqlState: '42S02',
+2026-04-25T21:20:18.569842021Z [err]      sqlMessage: "Table 'railway.modelProfile' doesn't exist"
+2026-04-25T21:20:18.569862996Z [err]        at PromisePool.query (/app/node_modules/mysql2/lib/promise/pool.js:36:22)
+2026-04-25T21:20:18.569867425Z [err]        at file:///app/node_modules/drizzle-orm/mysql2/session.js:79:27
+2026-04-25T21:20:18.569873165Z [err]        at MySql2PreparedQuery.queryWithCache (file:///app/node_modules/drizzle-orm/mysql-core/session.js:23:22)
+2026-04-25T21:20:18.569877289Z [err]        at MySql2PreparedQuery.execute (file:///app/node_modules/drizzle-orm/mysql2/session.js:78:31)
+2026-04-25T21:20:18.569881414Z [err]        at MySqlSelectBase.execute (file:///app/node_modules/drizzle-orm/mysql-core/query-builders/select.js:805:27)
+2026-04-25T21:20:18.569885714Z [err]        at MySqlSelectBase.then (file:///app/node_modules/drizzle-orm/query-promise.js:21:17)
+2026-04-25T21:20:18.569890529Z [err]        at process.processTicksAndRejections (node:internal/process/task_queues:103:5) {
+2026-04-25T21:20:18.569895460Z [err]      code: 'ER_NO_SUCH_TABLE',
+2026-04-25T21:20:19.969282376Z [err]      at async Promise.all (index 0)
+2026-04-25T21:20:19.969290744Z [err]      at async resolveResponse (file:///app/node_modules/@trpc/server/dist/resolveResponse-D7zvnoIM.mjs:2138:20) {
+2026-04-25T21:20:19.969295048Z [err]    query: 'select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit ?',
+2026-04-25T21:20:19.969298520Z [err]    params: [ 1 ],
+2026-04-25T21:20:19.969323941Z [err]  [Auth] Missing session cookie
+2026-04-25T21:20:19.969326774Z [err]  Error getting profile: DrizzleQueryError: Failed query: select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit ?
+2026-04-25T21:20:19.969330460Z [err]  params: 1
+2026-04-25T21:20:19.969333403Z [err]      at MySql2PreparedQuery.queryWithCache (file:///app/node_modules/drizzle-orm/mysql-core/session.js:25:15)
+2026-04-25T21:20:19.969336302Z [err]      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-04-25T21:20:19.969339269Z [err]      at async MySql2PreparedQuery.execute (file:///app/node_modules/drizzle-orm/mysql2/session.js:78:20)
+2026-04-25T21:20:19.969342115Z [err]      at async file:///app/dist/index.js:761:24
+2026-04-25T21:20:19.969344831Z [err]      at async resolveMiddleware (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:221:17)
+2026-04-25T21:20:19.969347595Z [err]      at async callRecursive (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:256:18)
+2026-04-25T21:20:19.969350217Z [err]      at async procedure (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:281:18)
+2026-04-25T21:20:19.969353183Z [err]      at async file:///app/node_modules/@trpc/server/dist/resolveResponse-D7zvnoIM.mjs:1948:18
+2026-04-25T21:20:19.969987103Z [err]    cause: Error: Table 'railway.modelProfile' doesn't exist
+2026-04-25T21:20:19.969990612Z [err]        at PromisePool.query (/app/node_modules/mysql2/lib/promise/pool.js:36:22)
+2026-04-25T21:20:19.969993507Z [err]        at file:///app/node_modules/drizzle-orm/mysql2/session.js:79:27
+2026-04-25T21:20:19.969998183Z [err]        at MySql2PreparedQuery.queryWithCache (file:///app/node_modules/drizzle-orm/mysql-core/session.js:23:22)
+2026-04-25T21:20:19.970001139Z [err]        at MySql2PreparedQuery.execute (file:///app/node_modules/drizzle-orm/mysql2/session.js:78:31)
+2026-04-25T21:20:19.970007880Z [err]        at MySqlSelectBase.execute (file:///app/node_modules/drizzle-orm/mysql-core/query-builders/select.js:805:27)
+2026-04-25T21:20:19.970012758Z [err]        at MySqlSelectBase.then (file:///app/node_modules/drizzle-orm/query-promise.js:21:17)
+2026-04-25T21:20:19.970015605Z [err]        at process.processTicksAndRejections (node:internal/process/task_queues:103:5) {
+2026-04-25T21:20:19.970018290Z [err]      code: 'ER_NO_SUCH_TABLE',
+2026-04-25T21:20:19.970020920Z [err]      errno: 1146,
+2026-04-25T21:20:19.970023937Z [err]      sql: 'select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit 1',
+2026-04-25T21:20:19.970027114Z [err]      sqlState: '42S02',
+2026-04-25T21:20:19.970029865Z [err]      sqlMessage: "Table 'railway.modelProfile' doesn't exist"
+2026-04-25T21:20:19.970032370Z [err]    }
+2026-04-25T21:20:19.970035017Z [err]  }
+2026-04-25T21:20:25.343010398Z [err]  [Auth] Missing session cookie
+2026-04-25T21:20:26.659532391Z [err]  [Auth] Missing session cookie
+2026-04-25T21:20:30.185213918Z [err]  [Auth] Missing session cookie
+2026-04-25T21:20:30.185226045Z [err]  Error getting profile: DrizzleQueryError: Failed query: select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit ?
+2026-04-25T21:20:30.185231250Z [err]  params: 1
+2026-04-25T21:20:30.185235646Z [err]      at MySql2PreparedQuery.queryWithCache (file:///app/node_modules/drizzle-orm/mysql-core/session.js:25:15)
+2026-04-25T21:20:30.185238883Z [err]      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-04-25T21:20:30.185242735Z [err]      at async MySql2PreparedQuery.execute (file:///app/node_modules/drizzle-orm/mysql2/session.js:78:20)
+2026-04-25T21:20:30.185247083Z [err]      at async file:///app/dist/index.js:761:24
+2026-04-25T21:20:30.185251732Z [err]      at async resolveMiddleware (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:221:17)
+2026-04-25T21:20:30.185258169Z [err]      at async callRecursive (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:256:18)
+2026-04-25T21:20:30.185262389Z [err]      at async procedure (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:281:18)
+2026-04-25T21:20:30.185266155Z [err]      at async file:///app/node_modules/@trpc/server/dist/resolveResponse-D7zvnoIM.mjs:1948:18
+2026-04-25T21:20:30.185269684Z [err]      at async Promise.all (index 0)
+2026-04-25T21:20:30.185272966Z [err]      at async resolveResponse (file:///app/node_modules/@trpc/server/dist/resolveResponse-D7zvnoIM.mjs:2138:20) {
+2026-04-25T21:20:30.185277034Z [err]    query: 'select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit ?',
+2026-04-25T21:20:30.185281367Z [err]    params: [ 1 ],
+2026-04-25T21:20:30.186699765Z [err]    cause: Error: Table 'railway.modelProfile' doesn't exist
+2026-04-25T21:20:30.186709204Z [err]        at PromisePool.query (/app/node_modules/mysql2/lib/promise/pool.js:36:22)
+2026-04-25T21:20:30.186712766Z [err]        at file:///app/node_modules/drizzle-orm/mysql2/session.js:79:27
+2026-04-25T21:20:30.186715688Z [err]        at MySql2PreparedQuery.queryWithCache (file:///app/node_modules/drizzle-orm/mysql-core/session.js:23:22)
+2026-04-25T21:20:30.186718567Z [err]        at MySql2PreparedQuery.execute (file:///app/node_modules/drizzle-orm/mysql2/session.js:78:31)
+2026-04-25T21:20:30.186721451Z [err]        at MySqlSelectBase.execute (file:///app/node_modules/drizzle-orm/mysql-core/query-builders/select.js:805:27)
+2026-04-25T21:20:30.186724187Z [err]        at MySqlSelectBase.then (file:///app/node_modules/drizzle-orm/query-promise.js:21:17)
+2026-04-25T21:20:30.186727022Z [err]        at process.processTicksAndRejections (node:internal/process/task_queues:103:5) {
+2026-04-25T21:20:30.186730181Z [err]      code: 'ER_NO_SUCH_TABLE',
+2026-04-25T21:20:30.186733068Z [err]      errno: 1146,
+2026-04-25T21:20:30.186735970Z [err]      sql: 'select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit 1',
+2026-04-25T21:20:30.186738694Z [err]      sqlState: '42S02',
+2026-04-25T21:20:30.186741379Z [err]      sqlMessage: "Table 'railway.modelProfile' doesn't exist"
+2026-04-25T21:20:30.186743942Z [err]    }
+2026-04-25T21:20:30.186746744Z [err]  }
+2026-04-25T21:20:31.522999015Z [err]  [Auth] Missing session cookie
+2026-04-25T21:20:31.523001888Z [err]  Error getting profile: DrizzleQueryError: Failed query: select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit ?
+2026-04-25T21:20:31.523005517Z [err]  params: 1
+2026-04-25T21:20:31.523008295Z [err]      at MySql2PreparedQuery.queryWithCache (file:///app/node_modules/drizzle-orm/mysql-core/session.js:25:15)
+2026-04-25T21:20:31.523011007Z [err]      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-04-25T21:20:31.523013777Z [err]      at async MySql2PreparedQuery.execute (file:///app/node_modules/drizzle-orm/mysql2/session.js:78:20)
+2026-04-25T21:20:31.523016344Z [err]      at async file:///app/dist/index.js:761:24
+2026-04-25T21:20:31.523019198Z [err]      at async resolveMiddleware (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:221:17)
+2026-04-25T21:20:31.523021814Z [err]      at async callRecursive (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:256:18)
+2026-04-25T21:20:31.523024891Z [err]      at async procedure (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:281:18)
+2026-04-25T21:20:31.523027822Z [err]      at async file:///app/node_modules/@trpc/server/dist/resolveResponse-D7zvnoIM.mjs:1948:18
+2026-04-25T21:20:31.523030574Z [err]      at async Promise.all (index 0)
+2026-04-25T21:20:31.523033658Z [err]      at async resolveResponse (file:///app/node_modules/@trpc/server/dist/resolveResponse-D7zvnoIM.mjs:2138:20) {
+2026-04-25T21:20:31.523036582Z [err]    query: 'select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit ?',
+2026-04-25T21:20:31.523040355Z [err]    params: [ 1 ],
+2026-04-25T21:20:31.524217000Z [err]    cause: Error: Table 'railway.modelProfile' doesn't exist
+2026-04-25T21:20:31.524221205Z [err]        at PromisePool.query (/app/node_modules/mysql2/lib/promise/pool.js:36:22)
+2026-04-25T21:20:31.524225130Z [err]        at file:///app/node_modules/drizzle-orm/mysql2/session.js:79:27
+2026-04-25T21:20:31.524228688Z [err]        at MySql2PreparedQuery.queryWithCache (file:///app/node_modules/drizzle-orm/mysql-core/session.js:23:22)
+2026-04-25T21:20:31.524232199Z [err]        at MySql2PreparedQuery.execute (file:///app/node_modules/drizzle-orm/mysql2/session.js:78:31)
+2026-04-25T21:20:31.524237130Z [err]        at MySqlSelectBase.execute (file:///app/node_modules/drizzle-orm/mysql-core/query-builders/select.js:805:27)
+2026-04-25T21:20:31.524249333Z [err]        at MySqlSelectBase.then (file:///app/node_modules/drizzle-orm/query-promise.js:21:17)
+2026-04-25T21:20:31.524253114Z [err]        at process.processTicksAndRejections (node:internal/process/task_queues:103:5) {
+2026-04-25T21:20:31.524257081Z [err]      code: 'ER_NO_SUCH_TABLE',
+2026-04-25T21:20:31.524261141Z [err]      errno: 1146,
+2026-04-25T21:20:31.524264595Z [err]      sql: 'select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit 1',
+2026-04-25T21:20:31.524268623Z [err]      sqlState: '42S02',
+2026-04-25T21:20:31.524271612Z [err]      sqlMessage: "Table 'railway.modelProfile' doesn't exist"
+2026-04-25T21:20:31.524274954Z [err]    }
+2026-04-25T21:20:31.524278481Z [err]  }
+2026-04-25T21:20:51.541395724Z [err]  [Auth] Missing session cookie
+2026-04-25T21:20:51.541404309Z [err]  Error getting profile: DrizzleQueryError: Failed query: select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit ?
+2026-04-25T21:20:51.541408896Z [err]  params: 1
+2026-04-25T21:20:51.541413157Z [err]      at MySql2PreparedQuery.queryWithCache (file:///app/node_modules/drizzle-orm/mysql-core/session.js:25:15)
+2026-04-25T21:20:51.541417079Z [err]      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-04-25T21:20:51.541420872Z [err]      at async MySql2PreparedQuery.execute (file:///app/node_modules/drizzle-orm/mysql2/session.js:78:20)
+2026-04-25T21:20:51.541425133Z [err]      at async file:///app/dist/index.js:761:24
+2026-04-25T21:20:51.541428495Z [err]      at async resolveMiddleware (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:221:17)
+2026-04-25T21:20:51.541432154Z [err]      at async callRecursive (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:256:18)
+2026-04-25T21:20:51.541435285Z [err]      at async procedure (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:281:18)
+2026-04-25T21:20:51.541438679Z [err]      at async file:///app/node_modules/@trpc/server/dist/resolveResponse-D7zvnoIM.mjs:1948:18
+2026-04-25T21:20:51.541442219Z [err]      at async Promise.all (index 0)
+2026-04-25T21:20:51.541445392Z [err]      at async resolveResponse (file:///app/node_modules/@trpc/server/dist/resolveResponse-D7zvnoIM.mjs:2138:20) {
+2026-04-25T21:20:51.541449168Z [err]    query: 'select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit ?',
+2026-04-25T21:20:51.541452031Z [err]    params: [ 1 ],
+2026-04-25T21:20:51.543100879Z [err]  Error getting profile: DrizzleQueryError: Failed query: select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit ?
+2026-04-25T21:20:51.543117525Z [err]    cause: Error: Table 'railway.modelProfile' doesn't exist
+2026-04-25T21:20:51.543124737Z [err]        at PromisePool.query (/app/node_modules/mysql2/lib/promise/pool.js:36:22)
+2026-04-25T21:20:51.543129294Z [err]        at file:///app/node_modules/drizzle-orm/mysql2/session.js:79:27
+2026-04-25T21:20:51.543134008Z [err]        at MySql2PreparedQuery.queryWithCache (file:///app/node_modules/drizzle-orm/mysql-core/session.js:23:22)
+2026-04-25T21:20:51.543137506Z [err]        at MySql2PreparedQuery.execute (file:///app/node_modules/drizzle-orm/mysql2/session.js:78:31)
+2026-04-25T21:20:51.543142863Z [err]        at MySqlSelectBase.execute (file:///app/node_modules/drizzle-orm/mysql-core/query-builders/select.js:805:27)
+2026-04-25T21:20:51.543148122Z [err]        at MySqlSelectBase.then (file:///app/node_modules/drizzle-orm/query-promise.js:21:17)
+2026-04-25T21:20:51.543152422Z [err]        at process.processTicksAndRejections (node:internal/process/task_queues:103:5) {
+2026-04-25T21:20:51.543156680Z [err]      code: 'ER_NO_SUCH_TABLE',
+2026-04-25T21:20:51.543160373Z [err]      errno: 1146,
+2026-04-25T21:20:51.543163503Z [err]      sql: 'select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit 1',
+2026-04-25T21:20:51.543166794Z [err]      sqlState: '42S02',
+2026-04-25T21:20:51.543170105Z [err]      sqlMessage: "Table 'railway.modelProfile' doesn't exist"
+2026-04-25T21:20:51.543174257Z [err]    }
+2026-04-25T21:20:51.543177595Z [err]  }
+2026-04-25T21:20:51.543180872Z [err]  [Auth] Missing session cookie
+2026-04-25T21:20:51.544303827Z [err]  params: 1
+2026-04-25T21:20:51.544310148Z [err]      at MySql2PreparedQuery.queryWithCache (file:///app/node_modules/drizzle-orm/mysql-core/session.js:25:15)
+2026-04-25T21:20:51.544313912Z [err]      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-04-25T21:20:51.544317140Z [err]      at async MySql2PreparedQuery.execute (file:///app/node_modules/drizzle-orm/mysql2/session.js:78:20)
+2026-04-25T21:20:51.544324116Z [err]      at async file:///app/dist/index.js:761:24
+2026-04-25T21:20:51.544329456Z [err]      at async resolveMiddleware (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:221:17)
+2026-04-25T21:20:51.544334037Z [err]      at async callRecursive (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:256:18)
+2026-04-25T21:20:51.544337655Z [err]      at async procedure (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:281:18)
+2026-04-25T21:20:51.544340893Z [err]      at async file:///app/node_modules/@trpc/server/dist/resolveResponse-D7zvnoIM.mjs:1948:18
+2026-04-25T21:20:51.544344242Z [err]      at async Promise.all (index 0)
+2026-04-25T21:20:51.544347616Z [err]      at async resolveResponse (file:///app/node_modules/@trpc/server/dist/resolveResponse-D7zvnoIM.mjs:2138:20) {
+2026-04-25T21:20:51.544355222Z [err]    query: 'select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit ?',
+2026-04-25T21:20:51.544359922Z [err]    params: [ 1 ],
+2026-04-25T21:20:51.544363982Z [err]    cause: Error: Table 'railway.modelProfile' doesn't exist
+2026-04-25T21:20:51.544367435Z [err]        at PromisePool.query (/app/node_modules/mysql2/lib/promise/pool.js:36:22)
+2026-04-25T21:20:51.544370725Z [err]        at file:///app/node_modules/drizzle-orm/mysql2/session.js:79:27
+2026-04-25T21:20:51.546051626Z [err]        at MySql2PreparedQuery.queryWithCache (file:///app/node_modules/drizzle-orm/mysql-core/session.js:23:22)
+2026-04-25T21:20:51.546059923Z [err]        at MySql2PreparedQuery.execute (file:///app/node_modules/drizzle-orm/mysql2/session.js:78:31)
+2026-04-25T21:20:51.546065241Z [err]        at MySqlSelectBase.execute (file:///app/node_modules/drizzle-orm/mysql-core/query-builders/select.js:805:27)
+2026-04-25T21:20:51.546069523Z [err]        at MySqlSelectBase.then (file:///app/node_modules/drizzle-orm/query-promise.js:21:17)
+2026-04-25T21:20:51.546073362Z [err]        at process.processTicksAndRejections (node:internal/process/task_queues:103:5) {
+2026-04-25T21:20:51.546077920Z [err]      code: 'ER_NO_SUCH_TABLE',
+2026-04-25T21:20:51.546081879Z [err]      errno: 1146,
+2026-04-25T21:20:51.546086078Z [err]      sql: 'select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit 1',
+2026-04-25T21:20:51.546092216Z [err]      sqlState: '42S02',
+2026-04-25T21:20:51.546097029Z [err]      sqlMessage: "Table 'railway.modelProfile' doesn't exist"
+2026-04-25T21:20:51.546101300Z [err]    }
+2026-04-25T21:20:51.546105793Z [err]  }
+2026-04-25T21:20:53.529159852Z [err]  [Auth] Missing session cookie
+2026-04-25T21:20:53.535398357Z [err]  Error getting profile: DrizzleQueryError: Failed query: select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit ?
+2026-04-25T21:20:53.535405179Z [err]  params: 1
+2026-04-25T21:20:53.535409650Z [err]      at MySql2PreparedQuery.queryWithCache (file:///app/node_modules/drizzle-orm/mysql-core/session.js:25:15)
+2026-04-25T21:20:53.535413349Z [err]      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-04-25T21:20:53.535416876Z [err]      at async MySql2PreparedQuery.execute (file:///app/node_modules/drizzle-orm/mysql2/session.js:78:20)
+2026-04-25T21:20:53.535420724Z [err]      at async file:///app/dist/index.js:761:24
+2026-04-25T21:20:53.535425546Z [err]      at async resolveMiddleware (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:221:17)
+2026-04-25T21:20:53.535429100Z [err]      at async callRecursive (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:256:18)
+2026-04-25T21:20:53.535434234Z [err]      at async procedure (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:281:18)
+2026-04-25T21:20:53.535438146Z [err]      at async file:///app/node_modules/@trpc/server/dist/resolveResponse-D7zvnoIM.mjs:1948:18
+2026-04-25T21:20:53.535441790Z [err]      at async Promise.all (index 0)
+2026-04-25T21:20:53.535445342Z [err]      at async resolveResponse (file:///app/node_modules/@trpc/server/dist/resolveResponse-D7zvnoIM.mjs:2138:20) {
+2026-04-25T21:20:53.535449105Z [err]    query: 'select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit ?',
+2026-04-25T21:20:53.535452700Z [err]    params: [ 1 ],
+2026-04-25T21:20:53.535455752Z [err]    cause: Error: Table 'railway.modelProfile' doesn't exist
+2026-04-25T21:20:53.536776615Z [err]  }
+2026-04-25T21:20:53.536784558Z [err]        at PromisePool.query (/app/node_modules/mysql2/lib/promise/pool.js:36:22)
+2026-04-25T21:20:53.536789619Z [err]        at file:///app/node_modules/drizzle-orm/mysql2/session.js:79:27
+2026-04-25T21:20:53.536792879Z [err]        at MySql2PreparedQuery.queryWithCache (file:///app/node_modules/drizzle-orm/mysql-core/session.js:23:22)
+2026-04-25T21:20:53.536795746Z [err]        at MySql2PreparedQuery.execute (file:///app/node_modules/drizzle-orm/mysql2/session.js:78:31)
+2026-04-25T21:20:53.536799679Z [err]        at MySqlSelectBase.execute (file:///app/node_modules/drizzle-orm/mysql-core/query-builders/select.js:805:27)
+2026-04-25T21:20:53.536802585Z [err]        at MySqlSelectBase.then (file:///app/node_modules/drizzle-orm/query-promise.js:21:17)
+2026-04-25T21:20:53.536805650Z [err]        at process.processTicksAndRejections (node:internal/process/task_queues:103:5) {
+2026-04-25T21:20:53.536808718Z [err]      code: 'ER_NO_SUCH_TABLE',
+2026-04-25T21:20:53.536811798Z [err]      errno: 1146,
+2026-04-25T21:20:53.536815930Z [err]      sql: 'select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit 1',
+2026-04-25T21:20:53.536818766Z [err]      sqlState: '42S02',
+2026-04-25T21:20:53.536821691Z [err]      sqlMessage: "Table 'railway.modelProfile' doesn't exist"
+2026-04-25T21:20:53.536826309Z [err]    }
+2026-04-25T21:20:54.866603880Z [err]  [Auth] Missing session cookie
+2026-04-25T21:20:54.869823418Z [err]  Error getting profile: DrizzleQueryError: Failed query: select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit ?
+2026-04-25T21:20:54.869828004Z [err]  params: 1
+2026-04-25T21:20:54.869831558Z [err]      at MySql2PreparedQuery.queryWithCache (file:///app/node_modules/drizzle-orm/mysql-core/session.js:25:15)
+2026-04-25T21:20:54.869835362Z [err]      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-04-25T21:20:54.869838832Z [err]      at async MySql2PreparedQuery.execute (file:///app/node_modules/drizzle-orm/mysql2/session.js:78:20)
+2026-04-25T21:20:54.869842443Z [err]      at async file:///app/dist/index.js:761:24
+2026-04-25T21:20:54.869845468Z [err]      at async resolveMiddleware (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:221:17)
+2026-04-25T21:20:54.869847849Z [err]    params: [ 1 ],
+2026-04-25T21:20:54.869849989Z [err]      at async callRecursive (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:256:18)
+2026-04-25T21:20:54.869853908Z [err]      at async procedure (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:281:18)
+2026-04-25T21:20:54.869855843Z [err]    cause: Error: Table 'railway.modelProfile' doesn't exist
+2026-04-25T21:20:54.869858521Z [err]      at async file:///app/node_modules/@trpc/server/dist/resolveResponse-D7zvnoIM.mjs:1948:18
+2026-04-25T21:20:54.869861874Z [err]      at async Promise.all (index 0)
+2026-04-25T21:20:54.869865394Z [err]      at async resolveResponse (file:///app/node_modules/@trpc/server/dist/resolveResponse-D7zvnoIM.mjs:2138:20) {
+2026-04-25T21:20:54.869869050Z [err]    query: 'select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit ?',
+2026-04-25T21:20:54.871580434Z [err]        at PromisePool.query (/app/node_modules/mysql2/lib/promise/pool.js:36:22)
+2026-04-25T21:20:54.871584491Z [err]      errno: 1146,
+2026-04-25T21:20:54.871587252Z [err]        at file:///app/node_modules/drizzle-orm/mysql2/session.js:79:27
+2026-04-25T21:20:54.871591641Z [err]        at MySql2PreparedQuery.queryWithCache (file:///app/node_modules/drizzle-orm/mysql-core/session.js:23:22)
+2026-04-25T21:20:54.871595418Z [err]      sql: 'select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit 1',
+2026-04-25T21:20:54.871596853Z [err]        at MySql2PreparedQuery.execute (file:///app/node_modules/drizzle-orm/mysql2/session.js:78:31)
+2026-04-25T21:20:54.871603207Z [err]        at MySqlSelectBase.execute (file:///app/node_modules/drizzle-orm/mysql-core/query-builders/select.js:805:27)
+2026-04-25T21:20:54.871603712Z [err]      sqlState: '42S02',
+2026-04-25T21:20:54.871608359Z [err]        at MySqlSelectBase.then (file:///app/node_modules/drizzle-orm/query-promise.js:21:17)
+2026-04-25T21:20:54.871611830Z [err]      sqlMessage: "Table 'railway.modelProfile' doesn't exist"
+2026-04-25T21:20:54.871614190Z [err]        at process.processTicksAndRejections (node:internal/process/task_queues:103:5) {
+2026-04-25T21:20:54.871618727Z [err]      code: 'ER_NO_SUCH_TABLE',
+2026-04-25T21:20:54.871620562Z [err]    }
+2026-04-25T21:20:54.871625084Z [err]  }
+2026-04-25T21:20:57.045510007Z [err]  [Auth] Missing session cookie
+2026-04-25T21:20:58.475976539Z [err]  [Auth] Missing session cookie
+2026-04-25T21:21:05.594988924Z [err]  [Auth] Missing session cookie
+2026-04-25T21:21:05.594992406Z [err]  Error getting profile: DrizzleQueryError: Failed query: select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit ?
+2026-04-25T21:21:05.594995870Z [err]  params: 1
+2026-04-25T21:21:05.595000062Z [err]      at MySql2PreparedQuery.queryWithCache (file:///app/node_modules/drizzle-orm/mysql-core/session.js:25:15)
+2026-04-25T21:21:05.595004750Z [err]      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-04-25T21:21:05.595008524Z [err]      at async MySql2PreparedQuery.execute (file:///app/node_modules/drizzle-orm/mysql2/session.js:78:20)
+2026-04-25T21:21:05.595011806Z [err]      at async file:///app/dist/index.js:761:24
+2026-04-25T21:21:05.595015328Z [err]      at async resolveMiddleware (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:221:17)
+2026-04-25T21:21:05.595018901Z [err]      at async callRecursive (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:256:18)
+2026-04-25T21:21:05.595022564Z [err]      at async procedure (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:281:18)
+2026-04-25T21:21:05.595025841Z [err]      at async file:///app/node_modules/@trpc/server/dist/resolveResponse-D7zvnoIM.mjs:1948:18
+2026-04-25T21:21:05.595028970Z [err]      at async Promise.all (index 0)
+2026-04-25T21:21:05.595032353Z [err]      at async resolveResponse (file:///app/node_modules/@trpc/server/dist/resolveResponse-D7zvnoIM.mjs:2138:20) {
+2026-04-25T21:21:05.595035961Z [err]    query: 'select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit ?',
+2026-04-25T21:21:05.595038875Z [err]    params: [ 1 ],
+2026-04-25T21:21:05.596177148Z [err]    }
+2026-04-25T21:21:05.596183396Z [err]  }
+2026-04-25T21:21:05.596199333Z [err]    cause: Error: Table 'railway.modelProfile' doesn't exist
+2026-04-25T21:21:05.596204911Z [err]        at PromisePool.query (/app/node_modules/mysql2/lib/promise/pool.js:36:22)
+2026-04-25T21:21:05.596208337Z [err]        at file:///app/node_modules/drizzle-orm/mysql2/session.js:79:27
+2026-04-25T21:21:05.596211389Z [err]        at MySql2PreparedQuery.queryWithCache (file:///app/node_modules/drizzle-orm/mysql-core/session.js:23:22)
+2026-04-25T21:21:05.596214579Z [err]        at MySql2PreparedQuery.execute (file:///app/node_modules/drizzle-orm/mysql2/session.js:78:31)
+2026-04-25T21:21:05.596217388Z [err]        at MySqlSelectBase.execute (file:///app/node_modules/drizzle-orm/mysql-core/query-builders/select.js:805:27)
+2026-04-25T21:21:05.596220543Z [err]        at MySqlSelectBase.then (file:///app/node_modules/drizzle-orm/query-promise.js:21:17)
+2026-04-25T21:21:05.596223922Z [err]        at process.processTicksAndRejections (node:internal/process/task_queues:103:5) {
+2026-04-25T21:21:05.596226616Z [err]      code: 'ER_NO_SUCH_TABLE',
+2026-04-25T21:21:05.596229532Z [err]      errno: 1146,
+2026-04-25T21:21:05.596232248Z [err]      sql: 'select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit 1',
+2026-04-25T21:21:05.596234947Z [err]      sqlState: '42S02',
+2026-04-25T21:21:05.596237618Z [err]      sqlMessage: "Table 'railway.modelProfile' doesn't exist"
+2026-04-25T21:21:06.609422357Z [err]  [Auth] Missing session cookie
+2026-04-25T21:21:06.609425962Z [err]  Error getting profile: DrizzleQueryError: Failed query: select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit ?
+2026-04-25T21:21:06.609429144Z [err]  params: 1
+2026-04-25T21:21:06.609432352Z [err]      at MySql2PreparedQuery.queryWithCache (file:///app/node_modules/drizzle-orm/mysql-core/session.js:25:15)
+2026-04-25T21:21:06.609436110Z [err]      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-04-25T21:21:06.609439235Z [err]      at async MySql2PreparedQuery.execute (file:///app/node_modules/drizzle-orm/mysql2/session.js:78:20)
+2026-04-25T21:21:06.609442149Z [err]      at async file:///app/dist/index.js:761:24
+2026-04-25T21:21:06.609445495Z [err]      at async resolveMiddleware (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:221:17)
+2026-04-25T21:21:06.609448669Z [err]      at async callRecursive (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:256:18)
+2026-04-25T21:21:06.609451727Z [err]      at async procedure (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:281:18)
+2026-04-25T21:21:06.609455047Z [err]      at async file:///app/node_modules/@trpc/server/dist/resolveResponse-D7zvnoIM.mjs:1948:18
+2026-04-25T21:21:06.609458274Z [err]      at async Promise.all (index 0)
+2026-04-25T21:21:06.609461375Z [err]      at async resolveResponse (file:///app/node_modules/@trpc/server/dist/resolveResponse-D7zvnoIM.mjs:2138:20) {
+2026-04-25T21:21:06.609464955Z [err]    query: 'select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit ?',
+2026-04-25T21:21:06.609467921Z [err]    params: [ 1 ],
+2026-04-25T21:21:06.610617804Z [err]    cause: Error: Table 'railway.modelProfile' doesn't exist
+2026-04-25T21:21:06.610619556Z [err]      code: 'ER_NO_SUCH_TABLE',
+2026-04-25T21:21:06.610623211Z [err]        at PromisePool.query (/app/node_modules/mysql2/lib/promise/pool.js:36:22)
+2026-04-25T21:21:06.610626916Z [err]      errno: 1146,
+2026-04-25T21:21:06.610628847Z [err]        at file:///app/node_modules/drizzle-orm/mysql2/session.js:79:27
+2026-04-25T21:21:06.610633843Z [err]        at MySql2PreparedQuery.queryWithCache (file:///app/node_modules/drizzle-orm/mysql-core/session.js:23:22)
+2026-04-25T21:21:06.610634994Z [err]      sql: 'select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit 1',
+2026-04-25T21:21:06.610639517Z [err]        at MySql2PreparedQuery.execute (file:///app/node_modules/drizzle-orm/mysql2/session.js:78:31)
+2026-04-25T21:21:06.610641018Z [err]      sqlState: '42S02',
+2026-04-25T21:21:06.610645495Z [err]        at MySqlSelectBase.execute (file:///app/node_modules/drizzle-orm/mysql-core/query-builders/select.js:805:27)
+2026-04-25T21:21:06.610648042Z [err]      sqlMessage: "Table 'railway.modelProfile' doesn't exist"
+2026-04-25T21:21:06.610650940Z [err]        at MySqlSelectBase.then (file:///app/node_modules/drizzle-orm/query-promise.js:21:17)
+2026-04-25T21:21:06.610655415Z [err]        at process.processTicksAndRejections (node:internal/process/task_queues:103:5) {
+2026-04-25T21:21:06.610656097Z [err]    }
+2026-04-25T21:21:06.610660517Z [err]  }
+2026-04-25T21:21:26.348819622Z [err]    params: [ 1 ],
+2026-04-25T21:21:26.348838931Z [err]  [Auth] Missing session cookie
+2026-04-25T21:21:26.348841840Z [err]  Error getting profile: DrizzleQueryError: Failed query: select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit ?
+2026-04-25T21:21:26.348844725Z [err]  params: 1
+2026-04-25T21:21:26.348848286Z [err]      at MySql2PreparedQuery.queryWithCache (file:///app/node_modules/drizzle-orm/mysql-core/session.js:25:15)
+2026-04-25T21:21:26.348851199Z [err]      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-04-25T21:21:26.348854057Z [err]      at async MySql2PreparedQuery.execute (file:///app/node_modules/drizzle-orm/mysql2/session.js:78:20)
+2026-04-25T21:21:26.348857504Z [err]      at async file:///app/dist/index.js:761:24
+2026-04-25T21:21:26.348860600Z [err]      at async resolveMiddleware (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:221:17)
+2026-04-25T21:21:26.348863292Z [err]      at async callRecursive (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:256:18)
+2026-04-25T21:21:26.348865967Z [err]      at async procedure (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:281:18)
+2026-04-25T21:21:26.348868616Z [err]      at async file:///app/node_modules/@trpc/server/dist/resolveResponse-D7zvnoIM.mjs:1948:18
+2026-04-25T21:21:26.348872709Z [err]      at async Promise.all (index 0)
+2026-04-25T21:21:26.348875597Z [err]      at async resolveResponse (file:///app/node_modules/@trpc/server/dist/resolveResponse-D7zvnoIM.mjs:2138:20) {
+2026-04-25T21:21:26.348879559Z [err]    query: 'select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit ?',
+2026-04-25T21:21:26.350713345Z [err]  Error getting profile: DrizzleQueryError: Failed query: select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit ?
+2026-04-25T21:21:26.350716384Z [err]    cause: Error: Table 'railway.modelProfile' doesn't exist
+2026-04-25T21:21:26.350721461Z [err]        at PromisePool.query (/app/node_modules/mysql2/lib/promise/pool.js:36:22)
+2026-04-25T21:21:26.350724631Z [err]        at file:///app/node_modules/drizzle-orm/mysql2/session.js:79:27
+2026-04-25T21:21:26.350727610Z [err]        at MySql2PreparedQuery.queryWithCache (file:///app/node_modules/drizzle-orm/mysql-core/session.js:23:22)
+2026-04-25T21:21:26.350731260Z [err]        at MySql2PreparedQuery.execute (file:///app/node_modules/drizzle-orm/mysql2/session.js:78:31)
+2026-04-25T21:21:26.350734187Z [err]        at MySqlSelectBase.execute (file:///app/node_modules/drizzle-orm/mysql-core/query-builders/select.js:805:27)
+2026-04-25T21:21:26.350736777Z [err]        at MySqlSelectBase.then (file:///app/node_modules/drizzle-orm/query-promise.js:21:17)
+2026-04-25T21:21:26.350739781Z [err]        at process.processTicksAndRejections (node:internal/process/task_queues:103:5) {
+2026-04-25T21:21:26.350764397Z [err]      code: 'ER_NO_SUCH_TABLE',
+2026-04-25T21:21:26.350767395Z [err]      errno: 1146,
+2026-04-25T21:21:26.350770457Z [err]      sql: 'select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit 1',
+2026-04-25T21:21:26.350774120Z [err]      sqlState: '42S02',
+2026-04-25T21:21:26.350776965Z [err]      sqlMessage: "Table 'railway.modelProfile' doesn't exist"
+2026-04-25T21:21:26.350782544Z [err]    }
+2026-04-25T21:21:26.350787021Z [err]  }
+2026-04-25T21:21:26.350789831Z [err]  [Auth] Missing session cookie
+2026-04-25T21:21:26.352635514Z [err]  params: 1
+2026-04-25T21:21:26.352643008Z [err]      at MySql2PreparedQuery.queryWithCache (file:///app/node_modules/drizzle-orm/mysql-core/session.js:25:15)
+2026-04-25T21:21:26.352646931Z [err]      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-04-25T21:21:26.352650336Z [err]      at async MySql2PreparedQuery.execute (file:///app/node_modules/drizzle-orm/mysql2/session.js:78:20)
+2026-04-25T21:21:26.352653621Z [err]      at async file:///app/dist/index.js:761:24
+2026-04-25T21:21:26.352657473Z [err]      at async resolveMiddleware (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:221:17)
+2026-04-25T21:21:26.352661217Z [err]      at async callRecursive (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:256:18)
+2026-04-25T21:21:26.352664932Z [err]      at async procedure (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:281:18)
+2026-04-25T21:21:26.352668336Z [err]      at async file:///app/node_modules/@trpc/server/dist/resolveResponse-D7zvnoIM.mjs:1948:18
+2026-04-25T21:21:26.352671734Z [err]      at async Promise.all (index 0)
+2026-04-25T21:21:26.352675131Z [err]      at async resolveResponse (file:///app/node_modules/@trpc/server/dist/resolveResponse-D7zvnoIM.mjs:2138:20) {
+2026-04-25T21:21:26.352678568Z [err]    query: 'select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit ?',
+2026-04-25T21:21:26.352681986Z [err]    params: [ 1 ],
+2026-04-25T21:21:26.352687686Z [err]    cause: Error: Table 'railway.modelProfile' doesn't exist
+2026-04-25T21:21:26.352690736Z [err]        at PromisePool.query (/app/node_modules/mysql2/lib/promise/pool.js:36:22)
+2026-04-25T21:21:26.352698072Z [err]        at file:///app/node_modules/drizzle-orm/mysql2/session.js:79:27
+2026-04-25T21:21:26.354536073Z [err]        at MySql2PreparedQuery.queryWithCache (file:///app/node_modules/drizzle-orm/mysql-core/session.js:23:22)
+2026-04-25T21:21:26.354541823Z [err]        at MySql2PreparedQuery.execute (file:///app/node_modules/drizzle-orm/mysql2/session.js:78:31)
+2026-04-25T21:21:26.354545483Z [err]        at MySqlSelectBase.execute (file:///app/node_modules/drizzle-orm/mysql-core/query-builders/select.js:805:27)
+2026-04-25T21:21:26.354549028Z [err]        at MySqlSelectBase.then (file:///app/node_modules/drizzle-orm/query-promise.js:21:17)
+2026-04-25T21:21:26.354552357Z [err]        at process.processTicksAndRejections (node:internal/process/task_queues:103:5) {
+2026-04-25T21:21:26.354555915Z [err]      code: 'ER_NO_SUCH_TABLE',
+2026-04-25T21:21:26.354559060Z [err]      errno: 1146,
+2026-04-25T21:21:26.354562577Z [err]      sql: 'select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit 1',
+2026-04-25T21:21:26.354565727Z [err]      sqlState: '42S02',
+2026-04-25T21:21:26.354568827Z [err]      sqlMessage: "Table 'railway.modelProfile' doesn't exist"
+2026-04-25T21:21:26.354572073Z [err]    }
+2026-04-25T21:21:26.354575288Z [err]  }
+2026-04-25T21:21:28.691108115Z [err]  [Auth] Missing session cookie
+2026-04-25T21:21:29.109302522Z [err]  [Auth] Missing session cookie
+2026-04-25T21:21:29.109306949Z [err]  Error getting profile: DrizzleQueryError: Failed query: select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit ?
+2026-04-25T21:21:29.109310435Z [err]  params: 1
+2026-04-25T21:21:29.109314380Z [err]      at MySql2PreparedQuery.queryWithCache (file:///app/node_modules/drizzle-orm/mysql-core/session.js:25:15)
+2026-04-25T21:21:29.109317630Z [err]      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-04-25T21:21:29.109321052Z [err]      at async MySql2PreparedQuery.execute (file:///app/node_modules/drizzle-orm/mysql2/session.js:78:20)
+2026-04-25T21:21:29.109324107Z [err]      at async file:///app/dist/index.js:761:24
+2026-04-25T21:21:29.109327108Z [err]      at async resolveMiddleware (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:221:17)
+2026-04-25T21:21:29.109330124Z [err]      at async callRecursive (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:256:18)
+2026-04-25T21:21:29.109334134Z [err]      at async procedure (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:281:18)
+2026-04-25T21:21:29.109337561Z [err]      at async file:///app/node_modules/@trpc/server/dist/resolveResponse-D7zvnoIM.mjs:1948:18
+2026-04-25T21:21:29.109341011Z [err]      at async Promise.all (index 0)
+2026-04-25T21:21:29.109344415Z [err]      at async resolveResponse (file:///app/node_modules/@trpc/server/dist/resolveResponse-D7zvnoIM.mjs:2138:20) {
+2026-04-25T21:21:29.109347327Z [err]    query: 'select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit ?',
+2026-04-25T21:21:29.109350555Z [err]    params: [ 1 ],
+2026-04-25T21:21:29.110527990Z [err]    cause: Error: Table 'railway.modelProfile' doesn't exist
+2026-04-25T21:21:29.110534054Z [err]        at PromisePool.query (/app/node_modules/mysql2/lib/promise/pool.js:36:22)
+2026-04-25T21:21:29.110538085Z [err]        at file:///app/node_modules/drizzle-orm/mysql2/session.js:79:27
+2026-04-25T21:21:29.110541384Z [err]        at MySql2PreparedQuery.queryWithCache (file:///app/node_modules/drizzle-orm/mysql-core/session.js:23:22)
+2026-04-25T21:21:29.110545989Z [err]        at MySql2PreparedQuery.execute (file:///app/node_modules/drizzle-orm/mysql2/session.js:78:31)
+2026-04-25T21:21:29.110550200Z [err]        at MySqlSelectBase.execute (file:///app/node_modules/drizzle-orm/mysql-core/query-builders/select.js:805:27)
+2026-04-25T21:21:29.110553969Z [err]        at MySqlSelectBase.then (file:///app/node_modules/drizzle-orm/query-promise.js:21:17)
+2026-04-25T21:21:29.110557311Z [err]        at process.processTicksAndRejections (node:internal/process/task_queues:103:5) {
+2026-04-25T21:21:29.110561135Z [err]      code: 'ER_NO_SUCH_TABLE',
+2026-04-25T21:21:29.110564649Z [err]      errno: 1146,
+2026-04-25T21:21:29.110568334Z [err]      sql: 'select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit 1',
+2026-04-25T21:21:29.110572224Z [err]      sqlState: '42S02',
+2026-04-25T21:21:29.110575806Z [err]      sqlMessage: "Table 'railway.modelProfile' doesn't exist"
+2026-04-25T21:21:29.110578952Z [err]    }
+2026-04-25T21:21:29.110582150Z [err]  }
+2026-04-25T21:21:30.102063407Z [err]  Error getting profile: DrizzleQueryError: Failed query: select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit ?
+2026-04-25T21:21:30.102072299Z [err]  params: 1
+2026-04-25T21:21:30.102075958Z [err]      at MySql2PreparedQuery.queryWithCache (file:///app/node_modules/drizzle-orm/mysql-core/session.js:25:15)
+2026-04-25T21:21:30.102079145Z [err]      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-04-25T21:21:30.102082549Z [err]      at async MySql2PreparedQuery.execute (file:///app/node_modules/drizzle-orm/mysql2/session.js:78:20)
+2026-04-25T21:21:30.102087305Z [err]      at async file:///app/dist/index.js:761:24
+2026-04-25T21:21:30.102090651Z [err]      at async resolveMiddleware (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:221:17)
+2026-04-25T21:21:30.102093812Z [err]      at async callRecursive (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:256:18)
+2026-04-25T21:21:30.102097383Z [err]      at async procedure (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:281:18)
+2026-04-25T21:21:30.102100777Z [err]      at async file:///app/node_modules/@trpc/server/dist/resolveResponse-D7zvnoIM.mjs:1948:18
+2026-04-25T21:21:30.102104016Z [err]      at async Promise.all (index 0)
+2026-04-25T21:21:30.102107227Z [err]      at async resolveResponse (file:///app/node_modules/@trpc/server/dist/resolveResponse-D7zvnoIM.mjs:2138:20) {
+2026-04-25T21:21:30.102111327Z [err]    query: 'select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit ?',
+2026-04-25T21:21:30.102118946Z [err]  [Auth] Missing session cookie
+2026-04-25T21:21:30.102123000Z [err]  [Auth] Missing session cookie
+2026-04-25T21:21:30.103449723Z [err]    }
+2026-04-25T21:21:30.103454303Z [err]    params: [ 1 ],
+2026-04-25T21:21:30.103458435Z [err]  }
+2026-04-25T21:21:30.103462035Z [err]    cause: Error: Table 'railway.modelProfile' doesn't exist
+2026-04-25T21:21:30.103466195Z [err]        at PromisePool.query (/app/node_modules/mysql2/lib/promise/pool.js:36:22)
+2026-04-25T21:21:30.103469911Z [err]        at file:///app/node_modules/drizzle-orm/mysql2/session.js:79:27
+2026-04-25T21:21:30.103474758Z [err]        at MySql2PreparedQuery.queryWithCache (file:///app/node_modules/drizzle-orm/mysql-core/session.js:23:22)
+2026-04-25T21:21:30.103478661Z [err]        at MySql2PreparedQuery.execute (file:///app/node_modules/drizzle-orm/mysql2/session.js:78:31)
+2026-04-25T21:21:30.103482375Z [err]        at MySqlSelectBase.execute (file:///app/node_modules/drizzle-orm/mysql-core/query-builders/select.js:805:27)
+2026-04-25T21:21:30.103486135Z [err]        at MySqlSelectBase.then (file:///app/node_modules/drizzle-orm/query-promise.js:21:17)
+2026-04-25T21:21:30.103489822Z [err]        at process.processTicksAndRejections (node:internal/process/task_queues:103:5) {
+2026-04-25T21:21:30.103493524Z [err]      code: 'ER_NO_SUCH_TABLE',
+2026-04-25T21:21:30.103497322Z [err]      errno: 1146,
+2026-04-25T21:21:30.103500883Z [err]      sql: 'select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit 1',
+2026-04-25T21:21:30.103504490Z [err]      sqlState: '42S02',
+2026-04-25T21:21:30.103508055Z [err]      sqlMessage: "Table 'railway.modelProfile' doesn't exist"
+2026-04-25T21:21:49.828628208Z [err]  [Auth] Missing session cookie
+2026-04-25T21:21:49.828632784Z [err]  Error getting profile: DrizzleQueryError: Failed query: select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit ?
+2026-04-25T21:21:49.828637252Z [err]  params: 1
+2026-04-25T21:21:49.828641365Z [err]      at MySql2PreparedQuery.queryWithCache (file:///app/node_modules/drizzle-orm/mysql-core/session.js:25:15)
+2026-04-25T21:21:49.828646353Z [err]      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-04-25T21:21:49.828650243Z [err]      at async MySql2PreparedQuery.execute (file:///app/node_modules/drizzle-orm/mysql2/session.js:78:20)
+2026-04-25T21:21:49.828654019Z [err]      at async file:///app/dist/index.js:761:24
+2026-04-25T21:21:49.828657547Z [err]      at async resolveMiddleware (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:221:17)
+2026-04-25T21:21:49.828661498Z [err]      at async callRecursive (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:256:18)
+2026-04-25T21:21:49.828665266Z [err]      at async procedure (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:281:18)
+2026-04-25T21:21:49.828669081Z [err]      at async file:///app/node_modules/@trpc/server/dist/resolveResponse-D7zvnoIM.mjs:1948:18
+2026-04-25T21:21:49.828672559Z [err]      at async Promise.all (index 0)
+2026-04-25T21:21:49.828676199Z [err]      at async resolveResponse (file:///app/node_modules/@trpc/server/dist/resolveResponse-D7zvnoIM.mjs:2138:20) {
+2026-04-25T21:21:49.828679617Z [err]    query: 'select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit ?',
+2026-04-25T21:21:49.828686616Z [err]    params: [ 1 ],
+2026-04-25T21:21:49.829916184Z [err]    cause: Error: Table 'railway.modelProfile' doesn't exist
+2026-04-25T21:21:49.829925316Z [err]        at PromisePool.query (/app/node_modules/mysql2/lib/promise/pool.js:36:22)
+2026-04-25T21:21:49.829931095Z [err]        at file:///app/node_modules/drizzle-orm/mysql2/session.js:79:27
+2026-04-25T21:21:49.829936026Z [err]        at MySql2PreparedQuery.queryWithCache (file:///app/node_modules/drizzle-orm/mysql-core/session.js:23:22)
+2026-04-25T21:21:49.829941309Z [err]        at MySql2PreparedQuery.execute (file:///app/node_modules/drizzle-orm/mysql2/session.js:78:31)
+2026-04-25T21:21:49.829946404Z [err]        at MySqlSelectBase.execute (file:///app/node_modules/drizzle-orm/mysql-core/query-builders/select.js:805:27)
+2026-04-25T21:21:49.829951673Z [err]        at MySqlSelectBase.then (file:///app/node_modules/drizzle-orm/query-promise.js:21:17)
+2026-04-25T21:21:49.829956469Z [err]        at process.processTicksAndRejections (node:internal/process/task_queues:103:5) {
+2026-04-25T21:21:49.829960906Z [err]      code: 'ER_NO_SUCH_TABLE',
+2026-04-25T21:21:49.829966192Z [err]      errno: 1146,
+2026-04-25T21:21:49.829970881Z [err]      sql: 'select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit 1',
+2026-04-25T21:21:49.829975955Z [err]      sqlState: '42S02',
+2026-04-25T21:21:49.829981112Z [err]      sqlMessage: "Table 'railway.modelProfile' doesn't exist"
+2026-04-25T21:21:49.829986232Z [err]    }
+2026-04-25T21:21:49.829991127Z [err]  }
+2026-04-25T21:21:49.829995763Z [err]  [Auth] Missing session cookie
+2026-04-25T21:21:49.830000988Z [err]  Error getting profile: DrizzleQueryError: Failed query: select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit ?
+2026-04-25T21:21:49.831262109Z [err]  params: 1
+2026-04-25T21:21:49.831267652Z [err]      at MySql2PreparedQuery.queryWithCache (file:///app/node_modules/drizzle-orm/mysql-core/session.js:25:15)
+2026-04-25T21:21:49.831272876Z [err]      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-04-25T21:21:49.831277280Z [err]      at async MySql2PreparedQuery.execute (file:///app/node_modules/drizzle-orm/mysql2/session.js:78:20)
+2026-04-25T21:21:49.831281240Z [err]      at async file:///app/dist/index.js:761:24
+2026-04-25T21:21:49.831285263Z [err]      at async resolveMiddleware (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:221:17)
+2026-04-25T21:21:49.831289727Z [err]      at async callRecursive (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:256:18)
+2026-04-25T21:21:49.831294757Z [err]      at async procedure (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:281:18)
+2026-04-25T21:21:49.831298633Z [err]      at async file:///app/node_modules/@trpc/server/dist/resolveResponse-D7zvnoIM.mjs:1948:18
+2026-04-25T21:21:49.831302495Z [err]      at async Promise.all (index 0)
+2026-04-25T21:21:49.831306429Z [err]      at async resolveResponse (file:///app/node_modules/@trpc/server/dist/resolveResponse-D7zvnoIM.mjs:2138:20) {
+2026-04-25T21:21:49.831310349Z [err]    query: 'select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit ?',
+2026-04-25T21:21:49.831314112Z [err]    params: [ 1 ],
+2026-04-25T21:21:49.831317558Z [err]    cause: Error: Table 'railway.modelProfile' doesn't exist
+2026-04-25T21:21:49.831321256Z [err]        at PromisePool.query (/app/node_modules/mysql2/lib/promise/pool.js:36:22)
+2026-04-25T21:21:49.831325123Z [err]        at file:///app/node_modules/drizzle-orm/mysql2/session.js:79:27
+2026-04-25T21:21:49.832055409Z [err]        at MySql2PreparedQuery.queryWithCache (file:///app/node_modules/drizzle-orm/mysql-core/session.js:23:22)
+2026-04-25T21:21:49.832060067Z [err]        at MySql2PreparedQuery.execute (file:///app/node_modules/drizzle-orm/mysql2/session.js:78:31)
+2026-04-25T21:21:49.832063869Z [err]        at MySqlSelectBase.execute (file:///app/node_modules/drizzle-orm/mysql-core/query-builders/select.js:805:27)
+2026-04-25T21:21:49.832124930Z [err]        at MySqlSelectBase.then (file:///app/node_modules/drizzle-orm/query-promise.js:21:17)
+2026-04-25T21:21:49.832128938Z [err]        at process.processTicksAndRejections (node:internal/process/task_queues:103:5) {
+2026-04-25T21:21:49.832132367Z [err]      code: 'ER_NO_SUCH_TABLE',
+2026-04-25T21:21:49.832135910Z [err]      errno: 1146,
+2026-04-25T21:21:49.832139123Z [err]      sql: 'select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit 1',
+2026-04-25T21:21:49.832142433Z [err]      sqlState: '42S02',
+2026-04-25T21:21:49.832145582Z [err]      sqlMessage: "Table 'railway.modelProfile' doesn't exist"
+2026-04-25T21:21:49.832149011Z [err]    }
+2026-04-25T21:21:49.832152519Z [err]  }
+2026-04-25T21:21:52.302282132Z [err]      at async resolveMiddleware (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:221:17)
+2026-04-25T21:21:52.302288284Z [err]      at async callRecursive (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:256:18)
+2026-04-25T21:21:52.302291766Z [err]      at async procedure (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:281:18)
+2026-04-25T21:21:52.302294908Z [err]      at async file:///app/node_modules/@trpc/server/dist/resolveResponse-D7zvnoIM.mjs:1948:18
+2026-04-25T21:21:52.302298295Z [err]      at async Promise.all (index 0)
+2026-04-25T21:21:52.302301553Z [err]      at async resolveResponse (file:///app/node_modules/@trpc/server/dist/resolveResponse-D7zvnoIM.mjs:2138:20) {
+2026-04-25T21:21:52.302304885Z [err]    query: 'select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit ?',
+2026-04-25T21:21:52.302308809Z [err]    params: [ 1 ],
+2026-04-25T21:21:52.302378071Z [err]  [Auth] Missing session cookie
+2026-04-25T21:21:52.302381179Z [err]  Error getting profile: DrizzleQueryError: Failed query: select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit ?
+2026-04-25T21:21:52.302385081Z [err]  params: 1
+2026-04-25T21:21:52.302388067Z [err]      at MySql2PreparedQuery.queryWithCache (file:///app/node_modules/drizzle-orm/mysql-core/session.js:25:15)
+2026-04-25T21:21:52.302391276Z [err]      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-04-25T21:21:52.302394435Z [err]      at async MySql2PreparedQuery.execute (file:///app/node_modules/drizzle-orm/mysql2/session.js:78:20)
+2026-04-25T21:21:52.302398474Z [err]      at async file:///app/dist/index.js:761:24
+2026-04-25T21:21:52.303736899Z [err]        at MySqlSelectBase.execute (file:///app/node_modules/drizzle-orm/mysql-core/query-builders/select.js:805:27)
+2026-04-25T21:21:52.303743805Z [err]        at MySqlSelectBase.then (file:///app/node_modules/drizzle-orm/query-promise.js:21:17)
+2026-04-25T21:21:52.303747960Z [err]        at process.processTicksAndRejections (node:internal/process/task_queues:103:5) {
+2026-04-25T21:21:52.303751396Z [err]      code: 'ER_NO_SUCH_TABLE',
+2026-04-25T21:21:52.303754808Z [err]      errno: 1146,
+2026-04-25T21:21:52.303758598Z [err]      sql: 'select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit 1',
+2026-04-25T21:21:52.303762377Z [err]      sqlState: '42S02',
+2026-04-25T21:21:52.303765756Z [err]      sqlMessage: "Table 'railway.modelProfile' doesn't exist"
+2026-04-25T21:21:52.303768960Z [err]    }
+2026-04-25T21:21:52.303772380Z [err]  }
+2026-04-25T21:21:52.303785301Z [err]    cause: Error: Table 'railway.modelProfile' doesn't exist
+2026-04-25T21:21:52.303788279Z [err]        at PromisePool.query (/app/node_modules/mysql2/lib/promise/pool.js:36:22)
+2026-04-25T21:21:52.303790917Z [err]        at file:///app/node_modules/drizzle-orm/mysql2/session.js:79:27
+2026-04-25T21:21:52.303793632Z [err]        at MySql2PreparedQuery.queryWithCache (file:///app/node_modules/drizzle-orm/mysql-core/session.js:23:22)
+2026-04-25T21:21:52.303796742Z [err]        at MySql2PreparedQuery.execute (file:///app/node_modules/drizzle-orm/mysql2/session.js:78:31)
+2026-04-25T21:21:53.692515212Z [err]  [Auth] Missing session cookie
+2026-04-25T21:21:53.698398576Z [err]  Error getting profile: DrizzleQueryError: Failed query: select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit ?
+2026-04-25T21:21:53.698405404Z [err]  params: 1
+2026-04-25T21:21:53.698409207Z [err]      at MySql2PreparedQuery.queryWithCache (file:///app/node_modules/drizzle-orm/mysql-core/session.js:25:15)
+2026-04-25T21:21:53.698413040Z [err]      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-04-25T21:21:53.698417632Z [err]      at async MySql2PreparedQuery.execute (file:///app/node_modules/drizzle-orm/mysql2/session.js:78:20)
+2026-04-25T21:21:53.698421917Z [err]      at async file:///app/dist/index.js:761:24
+2026-04-25T21:21:53.698427104Z [err]      at async resolveMiddleware (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:221:17)
+2026-04-25T21:21:53.698431130Z [err]      at async callRecursive (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:256:18)
+2026-04-25T21:21:53.698434664Z [err]      at async procedure (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:281:18)
+2026-04-25T21:21:53.698438000Z [err]      at async file:///app/node_modules/@trpc/server/dist/resolveResponse-D7zvnoIM.mjs:1948:18
+2026-04-25T21:21:53.698441659Z [err]      at async Promise.all (index 0)
+2026-04-25T21:21:53.698446044Z [err]      at async resolveResponse (file:///app/node_modules/@trpc/server/dist/resolveResponse-D7zvnoIM.mjs:2138:20) {
+2026-04-25T21:21:53.698449220Z [err]    query: 'select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit ?',
+2026-04-25T21:21:53.698452262Z [err]    params: [ 1 ],
+2026-04-25T21:21:53.698455244Z [err]    cause: Error: Table 'railway.modelProfile' doesn't exist
+2026-04-25T21:21:53.699494184Z [err]    }
+2026-04-25T21:21:53.699494574Z [err]        at PromisePool.query (/app/node_modules/mysql2/lib/promise/pool.js:36:22)
+2026-04-25T21:21:53.699501958Z [err]  }
+2026-04-25T21:21:53.699502689Z [err]        at file:///app/node_modules/drizzle-orm/mysql2/session.js:79:27
+2026-04-25T21:21:53.699507668Z [err]        at MySql2PreparedQuery.queryWithCache (file:///app/node_modules/drizzle-orm/mysql-core/session.js:23:22)
+2026-04-25T21:21:53.699511302Z [err]        at MySql2PreparedQuery.execute (file:///app/node_modules/drizzle-orm/mysql2/session.js:78:31)
+2026-04-25T21:21:53.699514068Z [err]        at MySqlSelectBase.execute (file:///app/node_modules/drizzle-orm/mysql-core/query-builders/select.js:805:27)
+2026-04-25T21:21:53.699516951Z [err]        at MySqlSelectBase.then (file:///app/node_modules/drizzle-orm/query-promise.js:21:17)
+2026-04-25T21:21:53.699520366Z [err]        at process.processTicksAndRejections (node:internal/process/task_queues:103:5) {
+2026-04-25T21:21:53.699523714Z [err]      code: 'ER_NO_SUCH_TABLE',
+2026-04-25T21:21:53.699527009Z [err]      errno: 1146,
+2026-04-25T21:21:53.699530152Z [err]      sql: 'select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit 1',
+2026-04-25T21:21:53.699533300Z [err]      sqlState: '42S02',
+2026-04-25T21:21:53.699536880Z [err]      sqlMessage: "Table 'railway.modelProfile' doesn't exist"
+2026-04-25T21:22:00.323519139Z [err]  [Auth] Missing session cookie
+2026-04-25T21:22:01.679339667Z [err]  [Auth] Missing session cookie
+2026-04-25T21:22:03.973677919Z [err]  [Auth] Missing session cookie
+2026-04-25T21:22:03.973679073Z [err]      at async resolveMiddleware (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:221:17)
+2026-04-25T21:22:03.973682751Z [err]  Error getting profile: DrizzleQueryError: Failed query: select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit ?
+2026-04-25T21:22:03.973687151Z [err]  params: 1
+2026-04-25T21:22:03.973689142Z [err]      at async callRecursive (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:256:18)
+2026-04-25T21:22:03.973691790Z [err]      at MySql2PreparedQuery.queryWithCache (file:///app/node_modules/drizzle-orm/mysql-core/session.js:25:15)
+2026-04-25T21:22:03.973697488Z [err]      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-04-25T21:22:03.973697636Z [err]      at async procedure (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:281:18)
+2026-04-25T21:22:03.973703483Z [err]      at async file:///app/node_modules/@trpc/server/dist/resolveResponse-D7zvnoIM.mjs:1948:18
+2026-04-25T21:22:03.973703632Z [err]      at async MySql2PreparedQuery.execute (file:///app/node_modules/drizzle-orm/mysql2/session.js:78:20)
+2026-04-25T21:22:03.973709522Z [err]      at async file:///app/dist/index.js:761:24
+2026-04-25T21:22:03.973709694Z [err]      at async Promise.all (index 0)
+2026-04-25T21:22:03.973713797Z [err]      at async resolveResponse (file:///app/node_modules/@trpc/server/dist/resolveResponse-D7zvnoIM.mjs:2138:20) {
+2026-04-25T21:22:03.973717877Z [err]    query: 'select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit ?',
+2026-04-25T21:22:03.973721568Z [err]    params: [ 1 ],
+2026-04-25T21:22:03.975234430Z [err]    cause: Error: Table 'railway.modelProfile' doesn't exist
+2026-04-25T21:22:03.975243104Z [err]        at PromisePool.query (/app/node_modules/mysql2/lib/promise/pool.js:36:22)
+2026-04-25T21:22:03.975247971Z [err]        at file:///app/node_modules/drizzle-orm/mysql2/session.js:79:27
+2026-04-25T21:22:03.975252911Z [err]        at MySql2PreparedQuery.queryWithCache (file:///app/node_modules/drizzle-orm/mysql-core/session.js:23:22)
+2026-04-25T21:22:03.975257602Z [err]        at MySql2PreparedQuery.execute (file:///app/node_modules/drizzle-orm/mysql2/session.js:78:31)
+2026-04-25T21:22:03.975263419Z [err]        at MySqlSelectBase.execute (file:///app/node_modules/drizzle-orm/mysql-core/query-builders/select.js:805:27)
+2026-04-25T21:22:03.975268892Z [err]        at MySqlSelectBase.then (file:///app/node_modules/drizzle-orm/query-promise.js:21:17)
+2026-04-25T21:22:03.975273372Z [err]        at process.processTicksAndRejections (node:internal/process/task_queues:103:5) {
+2026-04-25T21:22:03.975277603Z [err]      code: 'ER_NO_SUCH_TABLE',
+2026-04-25T21:22:03.975281848Z [err]      errno: 1146,
+2026-04-25T21:22:03.975285842Z [err]      sql: 'select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit 1',
+2026-04-25T21:22:03.975289802Z [err]      sqlState: '42S02',
+2026-04-25T21:22:03.975293927Z [err]      sqlMessage: "Table 'railway.modelProfile' doesn't exist"
+2026-04-25T21:22:03.975298208Z [err]    }
+2026-04-25T21:22:03.975301864Z [err]  }
+2026-04-25T21:22:05.377079482Z [err]      at async resolveMiddleware (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:221:17)
+2026-04-25T21:22:05.377084913Z [err]      at async callRecursive (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:256:18)
+2026-04-25T21:22:05.377088290Z [err]      at async procedure (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:281:18)
+2026-04-25T21:22:05.377091206Z [err]      at async file:///app/node_modules/@trpc/server/dist/resolveResponse-D7zvnoIM.mjs:1948:18
+2026-04-25T21:22:05.377094963Z [err]      at async Promise.all (index 0)
+2026-04-25T21:22:05.377097995Z [err]      at async resolveResponse (file:///app/node_modules/@trpc/server/dist/resolveResponse-D7zvnoIM.mjs:2138:20) {
+2026-04-25T21:22:05.377100961Z [err]    query: 'select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit ?',
+2026-04-25T21:22:05.377103961Z [err]    params: [ 1 ],
+2026-04-25T21:22:05.377188330Z [err]  [Auth] Missing session cookie
+2026-04-25T21:22:05.377191838Z [err]  Error getting profile: DrizzleQueryError: Failed query: select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit ?
+2026-04-25T21:22:05.377195309Z [err]  params: 1
+2026-04-25T21:22:05.377198658Z [err]      at MySql2PreparedQuery.queryWithCache (file:///app/node_modules/drizzle-orm/mysql-core/session.js:25:15)
+2026-04-25T21:22:05.377201805Z [err]      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-04-25T21:22:05.377204886Z [err]      at async MySql2PreparedQuery.execute (file:///app/node_modules/drizzle-orm/mysql2/session.js:78:20)
+2026-04-25T21:22:05.377208574Z [err]      at async file:///app/dist/index.js:761:24
+2026-04-25T21:22:05.378219524Z [err]      errno: 1146,
+2026-04-25T21:22:05.378223979Z [err]      sql: 'select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit 1',
+2026-04-25T21:22:05.378227474Z [err]      sqlState: '42S02',
+2026-04-25T21:22:05.378230705Z [err]      sqlMessage: "Table 'railway.modelProfile' doesn't exist"
+2026-04-25T21:22:05.378234241Z [err]    }
+2026-04-25T21:22:05.378237636Z [err]  }
+2026-04-25T21:22:05.378256890Z [err]    cause: Error: Table 'railway.modelProfile' doesn't exist
+2026-04-25T21:22:05.378260504Z [err]        at PromisePool.query (/app/node_modules/mysql2/lib/promise/pool.js:36:22)
+2026-04-25T21:22:05.378264199Z [err]        at file:///app/node_modules/drizzle-orm/mysql2/session.js:79:27
+2026-04-25T21:22:05.378269120Z [err]        at MySql2PreparedQuery.queryWithCache (file:///app/node_modules/drizzle-orm/mysql-core/session.js:23:22)
+2026-04-25T21:22:05.378272873Z [err]        at MySql2PreparedQuery.execute (file:///app/node_modules/drizzle-orm/mysql2/session.js:78:31)
+2026-04-25T21:22:05.378276876Z [err]        at MySqlSelectBase.execute (file:///app/node_modules/drizzle-orm/mysql-core/query-builders/select.js:805:27)
+2026-04-25T21:22:05.378280544Z [err]        at MySqlSelectBase.then (file:///app/node_modules/drizzle-orm/query-promise.js:21:17)
+2026-04-25T21:22:05.378284270Z [err]        at process.processTicksAndRejections (node:internal/process/task_queues:103:5) {
+2026-04-25T21:22:05.378288162Z [err]      code: 'ER_NO_SUCH_TABLE',
+2026-04-25T21:22:25.205469382Z [err]  [Auth] Missing session cookie
+2026-04-25T21:22:25.205475835Z [err]  Error getting profile: DrizzleQueryError: Failed query: select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit ?
+2026-04-25T21:22:25.205481069Z [err]  params: 1
+2026-04-25T21:22:25.205485592Z [err]      at MySql2PreparedQuery.queryWithCache (file:///app/node_modules/drizzle-orm/mysql-core/session.js:25:15)
+2026-04-25T21:22:25.205489444Z [err]      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-04-25T21:22:25.205493095Z [err]      at async MySql2PreparedQuery.execute (file:///app/node_modules/drizzle-orm/mysql2/session.js:78:20)
+2026-04-25T21:22:25.205499406Z [err]      at async file:///app/dist/index.js:761:24
+2026-04-25T21:22:25.205503494Z [err]      at async resolveMiddleware (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:221:17)
+2026-04-25T21:22:25.205507075Z [err]      at async callRecursive (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:256:18)
+2026-04-25T21:22:25.205510499Z [err]      at async procedure (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:281:18)
+2026-04-25T21:22:25.205513904Z [err]      at async file:///app/node_modules/@trpc/server/dist/resolveResponse-D7zvnoIM.mjs:1948:18
+2026-04-25T21:22:25.205518827Z [err]      at async Promise.all (index 0)
+2026-04-25T21:22:25.205522268Z [err]      at async resolveResponse (file:///app/node_modules/@trpc/server/dist/resolveResponse-D7zvnoIM.mjs:2138:20) {
+2026-04-25T21:22:25.205530784Z [err]    query: 'select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit ?',
+2026-04-25T21:22:25.205533807Z [err]    params: [ 1 ],
+2026-04-25T21:22:25.206818128Z [err]    cause: Error: Table 'railway.modelProfile' doesn't exist
+2026-04-25T21:22:25.206819570Z [err]  }
+2026-04-25T21:22:25.206823727Z [err]        at PromisePool.query (/app/node_modules/mysql2/lib/promise/pool.js:36:22)
+2026-04-25T21:22:25.206825373Z [err]  [Auth] Missing session cookie
+2026-04-25T21:22:25.206828424Z [err]        at file:///app/node_modules/drizzle-orm/mysql2/session.js:79:27
+2026-04-25T21:22:25.206830343Z [err]  Error getting profile: DrizzleQueryError: Failed query: select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit ?
+2026-04-25T21:22:25.206833210Z [err]        at MySql2PreparedQuery.queryWithCache (file:///app/node_modules/drizzle-orm/mysql-core/session.js:23:22)
+2026-04-25T21:22:25.206838381Z [err]      errno: 1146,
+2026-04-25T21:22:25.206838967Z [err]        at MySql2PreparedQuery.execute (file:///app/node_modules/drizzle-orm/mysql2/session.js:78:31)
+2026-04-25T21:22:25.206845235Z [err]        at MySqlSelectBase.execute (file:///app/node_modules/drizzle-orm/mysql-core/query-builders/select.js:805:27)
+2026-04-25T21:22:25.206847700Z [err]      sql: 'select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit 1',
+2026-04-25T21:22:25.206850903Z [err]        at MySqlSelectBase.then (file:///app/node_modules/drizzle-orm/query-promise.js:21:17)
+2026-04-25T21:22:25.206853426Z [err]      sqlState: '42S02',
+2026-04-25T21:22:25.206856696Z [err]        at process.processTicksAndRejections (node:internal/process/task_queues:103:5) {
+2026-04-25T21:22:25.206860192Z [err]      sqlMessage: "Table 'railway.modelProfile' doesn't exist"
+2026-04-25T21:22:25.206861772Z [err]      code: 'ER_NO_SUCH_TABLE',
+2026-04-25T21:22:25.206864679Z [err]    }
+2026-04-25T21:22:25.208293790Z [err]        at PromisePool.query (/app/node_modules/mysql2/lib/promise/pool.js:36:22)
+2026-04-25T21:22:25.208297725Z [err]        at file:///app/node_modules/drizzle-orm/mysql2/session.js:79:27
+2026-04-25T21:22:25.208302622Z [err]  params: 1
+2026-04-25T21:22:25.208307780Z [err]      at MySql2PreparedQuery.queryWithCache (file:///app/node_modules/drizzle-orm/mysql-core/session.js:25:15)
+2026-04-25T21:22:25.208312291Z [err]      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-04-25T21:22:25.208316131Z [err]      at async MySql2PreparedQuery.execute (file:///app/node_modules/drizzle-orm/mysql2/session.js:78:20)
+2026-04-25T21:22:25.208319853Z [err]      at async file:///app/dist/index.js:761:24
+2026-04-25T21:22:25.208323080Z [err]      at async resolveMiddleware (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:221:17)
+2026-04-25T21:22:25.208327074Z [err]      at async callRecursive (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:256:18)
+2026-04-25T21:22:25.208330266Z [err]      at async procedure (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:281:18)
+2026-04-25T21:22:25.208334292Z [err]      at async file:///app/node_modules/@trpc/server/dist/resolveResponse-D7zvnoIM.mjs:1948:18
+2026-04-25T21:22:25.208337211Z [err]      at async Promise.all (index 0)
+2026-04-25T21:22:25.208340149Z [err]      at async resolveResponse (file:///app/node_modules/@trpc/server/dist/resolveResponse-D7zvnoIM.mjs:2138:20) {
+2026-04-25T21:22:25.208342964Z [err]    query: 'select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit ?',
+2026-04-25T21:22:25.208345869Z [err]    params: [ 1 ],
+2026-04-25T21:22:25.208348935Z [err]    cause: Error: Table 'railway.modelProfile' doesn't exist
+2026-04-25T21:22:25.209567546Z [err]        at MySql2PreparedQuery.queryWithCache (file:///app/node_modules/drizzle-orm/mysql-core/session.js:23:22)
+2026-04-25T21:22:25.209573218Z [err]        at MySql2PreparedQuery.execute (file:///app/node_modules/drizzle-orm/mysql2/session.js:78:31)
+2026-04-25T21:22:25.209576567Z [err]        at MySqlSelectBase.execute (file:///app/node_modules/drizzle-orm/mysql-core/query-builders/select.js:805:27)
+2026-04-25T21:22:25.209579702Z [err]        at MySqlSelectBase.then (file:///app/node_modules/drizzle-orm/query-promise.js:21:17)
+2026-04-25T21:22:25.209582630Z [err]        at process.processTicksAndRejections (node:internal/process/task_queues:103:5) {
+2026-04-25T21:22:25.209585444Z [err]      code: 'ER_NO_SUCH_TABLE',
+2026-04-25T21:22:25.209588361Z [err]      errno: 1146,
+2026-04-25T21:22:25.209590974Z [err]      sql: 'select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit 1',
+2026-04-25T21:22:25.209593773Z [err]      sqlState: '42S02',
+2026-04-25T21:22:25.209596627Z [err]      sqlMessage: "Table 'railway.modelProfile' doesn't exist"
+2026-04-25T21:22:25.209599671Z [err]    }
+2026-04-25T21:22:25.209602605Z [err]  }
+2026-04-25T21:22:27.781436491Z [err]  [Auth] Missing session cookie
+2026-04-25T21:22:27.781441263Z [err]  Error getting profile: DrizzleQueryError: Failed query: select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit ?
+2026-04-25T21:22:27.781446226Z [err]  params: 1
+2026-04-25T21:22:27.781452248Z [err]      at MySql2PreparedQuery.queryWithCache (file:///app/node_modules/drizzle-orm/mysql-core/session.js:25:15)
+2026-04-25T21:22:27.781456385Z [err]      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-04-25T21:22:27.781461957Z [err]      at async MySql2PreparedQuery.execute (file:///app/node_modules/drizzle-orm/mysql2/session.js:78:20)
+2026-04-25T21:22:27.781466308Z [err]      at async file:///app/dist/index.js:761:24
+2026-04-25T21:22:27.781471243Z [err]      at async resolveMiddleware (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:221:17)
+2026-04-25T21:22:27.781475523Z [err]      at async callRecursive (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:256:18)
+2026-04-25T21:22:27.781478754Z [err]      at async procedure (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:281:18)
+2026-04-25T21:22:27.781482126Z [err]      at async file:///app/node_modules/@trpc/server/dist/resolveResponse-D7zvnoIM.mjs:1948:18
+2026-04-25T21:22:27.781486299Z [err]      at async Promise.all (index 0)
+2026-04-25T21:22:27.781490767Z [err]      at async resolveResponse (file:///app/node_modules/@trpc/server/dist/resolveResponse-D7zvnoIM.mjs:2138:20) {
+2026-04-25T21:22:27.781496177Z [err]    query: 'select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit ?',
+2026-04-25T21:22:27.781499936Z [err]    params: [ 1 ],
+2026-04-25T21:22:27.782681091Z [err]    cause: Error: Table 'railway.modelProfile' doesn't exist
+2026-04-25T21:22:27.782686578Z [err]        at PromisePool.query (/app/node_modules/mysql2/lib/promise/pool.js:36:22)
+2026-04-25T21:22:27.782692556Z [err]        at file:///app/node_modules/drizzle-orm/mysql2/session.js:79:27
+2026-04-25T21:22:27.782694326Z [err]      sqlState: '42S02',
+2026-04-25T21:22:27.782699085Z [err]        at MySql2PreparedQuery.queryWithCache (file:///app/node_modules/drizzle-orm/mysql-core/session.js:23:22)
+2026-04-25T21:22:27.782705820Z [err]        at MySql2PreparedQuery.execute (file:///app/node_modules/drizzle-orm/mysql2/session.js:78:31)
+2026-04-25T21:22:27.782706406Z [err]      sqlMessage: "Table 'railway.modelProfile' doesn't exist"
+2026-04-25T21:22:27.782711497Z [err]        at MySqlSelectBase.execute (file:///app/node_modules/drizzle-orm/mysql-core/query-builders/select.js:805:27)
+2026-04-25T21:22:27.782716158Z [err]        at MySqlSelectBase.then (file:///app/node_modules/drizzle-orm/query-promise.js:21:17)
+2026-04-25T21:22:27.782717128Z [err]    }
+2026-04-25T21:22:27.782722474Z [err]        at process.processTicksAndRejections (node:internal/process/task_queues:103:5) {
+2026-04-25T21:22:27.782724805Z [err]  }
+2026-04-25T21:22:27.782727469Z [err]      code: 'ER_NO_SUCH_TABLE',
+2026-04-25T21:22:27.782730682Z [err]      errno: 1146,
+2026-04-25T21:22:27.782734772Z [err]      sql: 'select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit 1',
+2026-04-25T21:22:28.789623578Z [err]    query: 'select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit ?',
+2026-04-25T21:22:28.789625045Z [err]      at async MySql2PreparedQuery.execute (file:///app/node_modules/drizzle-orm/mysql2/session.js:78:20)
+2026-04-25T21:22:28.789631302Z [err]    params: [ 1 ],
+2026-04-25T21:22:28.789638229Z [err]      at async Promise.all (index 0)
+2026-04-25T21:22:28.789638898Z [err]      at async file:///app/dist/index.js:761:24
+2026-04-25T21:22:28.789647003Z [err]      at async resolveMiddleware (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:221:17)
+2026-04-25T21:22:28.789647078Z [err]      at async resolveResponse (file:///app/node_modules/@trpc/server/dist/resolveResponse-D7zvnoIM.mjs:2138:20) {
+2026-04-25T21:22:28.789654048Z [err]      at async callRecursive (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:256:18)
+2026-04-25T21:22:28.789659109Z [err]      at async procedure (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:281:18)
+2026-04-25T21:22:28.789663634Z [err]      at async file:///app/node_modules/@trpc/server/dist/resolveResponse-D7zvnoIM.mjs:1948:18
+2026-04-25T21:22:28.789677232Z [err]  [Auth] Missing session cookie
+2026-04-25T21:22:28.789680880Z [err]  Error getting profile: DrizzleQueryError: Failed query: select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit ?
+2026-04-25T21:22:28.789684061Z [err]  params: 1
+2026-04-25T21:22:28.789686797Z [err]      at MySql2PreparedQuery.queryWithCache (file:///app/node_modules/drizzle-orm/mysql-core/session.js:25:15)
+2026-04-25T21:22:28.789691113Z [err]      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-04-25T21:22:28.790657231Z [err]    cause: Error: Table 'railway.modelProfile' doesn't exist
+2026-04-25T21:22:28.790664863Z [err]        at PromisePool.query (/app/node_modules/mysql2/lib/promise/pool.js:36:22)
+2026-04-25T21:22:28.790669491Z [err]        at file:///app/node_modules/drizzle-orm/mysql2/session.js:79:27
+2026-04-25T21:22:28.790673910Z [err]        at MySql2PreparedQuery.queryWithCache (file:///app/node_modules/drizzle-orm/mysql-core/session.js:23:22)
+2026-04-25T21:22:28.790679537Z [err]        at MySql2PreparedQuery.execute (file:///app/node_modules/drizzle-orm/mysql2/session.js:78:31)
+2026-04-25T21:22:28.790683658Z [err]        at MySqlSelectBase.execute (file:///app/node_modules/drizzle-orm/mysql-core/query-builders/select.js:805:27)
+2026-04-25T21:22:28.790687247Z [err]        at MySqlSelectBase.then (file:///app/node_modules/drizzle-orm/query-promise.js:21:17)
+2026-04-25T21:22:28.790692274Z [err]        at process.processTicksAndRejections (node:internal/process/task_queues:103:5) {
+2026-04-25T21:22:28.790695766Z [err]      code: 'ER_NO_SUCH_TABLE',
+2026-04-25T21:22:28.790699172Z [err]      errno: 1146,
+2026-04-25T21:22:28.790703887Z [err]      sql: 'select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit 1',
+2026-04-25T21:22:28.790708017Z [err]      sqlState: '42S02',
+2026-04-25T21:22:28.790711608Z [err]      sqlMessage: "Table 'railway.modelProfile' doesn't exist"
+2026-04-25T21:22:28.790714776Z [err]    }
+2026-04-25T21:22:28.790718287Z [err]  }
+2026-04-25T21:22:32.063790586Z [err]  [Auth] Missing session cookie
+2026-04-25T21:22:33.345213056Z [err]  [Auth] Missing session cookie
+2026-04-25T21:22:39.166355079Z [err]  [Auth] Missing session cookie
+2026-04-25T21:22:39.172546405Z [err]  Error getting profile: DrizzleQueryError: Failed query: select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit ?
+2026-04-25T21:22:39.172553798Z [err]  params: 1
+2026-04-25T21:22:39.172558332Z [err]      at MySql2PreparedQuery.queryWithCache (file:///app/node_modules/drizzle-orm/mysql-core/session.js:25:15)
+2026-04-25T21:22:39.172565347Z [err]      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-04-25T21:22:39.172569415Z [err]      at async MySql2PreparedQuery.execute (file:///app/node_modules/drizzle-orm/mysql2/session.js:78:20)
+2026-04-25T21:22:39.172573280Z [err]      at async file:///app/dist/index.js:761:24
+2026-04-25T21:22:39.172577364Z [err]      at async resolveMiddleware (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:221:17)
+2026-04-25T21:22:39.172580978Z [err]      at async callRecursive (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:256:18)
+2026-04-25T21:22:39.172584801Z [err]      at async procedure (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:281:18)
+2026-04-25T21:22:39.172588178Z [err]      at async file:///app/node_modules/@trpc/server/dist/resolveResponse-D7zvnoIM.mjs:1948:18
+2026-04-25T21:22:39.172591561Z [err]      at async Promise.all (index 0)
+2026-04-25T21:22:39.172595202Z [err]      at async resolveResponse (file:///app/node_modules/@trpc/server/dist/resolveResponse-D7zvnoIM.mjs:2138:20) {
+2026-04-25T21:22:39.172598986Z [err]    query: 'select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit ?',
+2026-04-25T21:22:39.172602421Z [err]    params: [ 1 ],
+2026-04-25T21:22:39.172606153Z [err]    cause: Error: Table 'railway.modelProfile' doesn't exist
+2026-04-25T21:22:39.174054488Z [err]        at PromisePool.query (/app/node_modules/mysql2/lib/promise/pool.js:36:22)
+2026-04-25T21:22:39.174058377Z [err]        at file:///app/node_modules/drizzle-orm/mysql2/session.js:79:27
+2026-04-25T21:22:39.174068522Z [err]        at MySqlSelectBase.execute (file:///app/node_modules/drizzle-orm/mysql-core/query-builders/select.js:805:27)
+2026-04-25T21:22:39.174078171Z [err]      code: 'ER_NO_SUCH_TABLE',
+2026-04-25T21:22:39.174081146Z [err]      errno: 1146,
+2026-04-25T21:22:39.174084391Z [err]      sql: 'select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit 1',
+2026-04-25T21:22:39.174089479Z [err]      sqlState: '42S02',
+2026-04-25T21:22:39.174096052Z [err]    }
+2026-04-25T21:22:39.174099251Z [err]  }
+2026-04-25T21:22:40.474313577Z [err]  [Auth] Missing session cookie
+2026-04-25T21:22:40.477627113Z [err]  Error getting profile: DrizzleQueryError: Failed query: select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit ?
+2026-04-25T21:22:40.477637016Z [err]      at MySql2PreparedQuery.queryWithCache (file:///app/node_modules/drizzle-orm/mysql-core/session.js:25:15)
+2026-04-25T21:22:40.477644140Z [err]      at async MySql2PreparedQuery.execute (file:///app/node_modules/drizzle-orm/mysql2/session.js:78:20)
+2026-04-25T21:22:40.477651932Z [err]      at async resolveMiddleware (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:221:17)
+2026-04-25T21:22:40.477655426Z [err]      at async callRecursive (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:256:18)
+2026-04-25T21:22:40.477658999Z [err]      at async procedure (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:281:18)
+2026-04-25T21:22:40.477662665Z [err]      at async file:///app/node_modules/@trpc/server/dist/resolveResponse-D7zvnoIM.mjs:1948:18
+2026-04-25T21:22:40.477678352Z [err]      at async Promise.all (index 0)
+2026-04-25T21:22:40.477682057Z [err]      at async resolveResponse (file:///app/node_modules/@trpc/server/dist/resolveResponse-D7zvnoIM.mjs:2138:20) {
+2026-04-25T21:22:40.477685888Z [err]    query: 'select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit ?',
+2026-04-25T21:22:40.477689796Z [err]    params: [ 1 ],
+2026-04-25T21:22:40.477693268Z [err]    cause: Error: Table 'railway.modelProfile' doesn't exist
+2026-04-25T21:22:40.478624246Z [err]        at PromisePool.query (/app/node_modules/mysql2/lib/promise/pool.js:36:22)
+2026-04-25T21:22:40.478633998Z [err]        at file:///app/node_modules/drizzle-orm/mysql2/session.js:79:27
+2026-04-25T21:22:40.478639243Z [err]        at MySql2PreparedQuery.queryWithCache (file:///app/node_modules/drizzle-orm/mysql-core/session.js:23:22)
+2026-04-25T21:22:40.478645310Z [err]        at MySql2PreparedQuery.execute (file:///app/node_modules/drizzle-orm/mysql2/session.js:78:31)
+2026-04-25T21:22:40.478650442Z [err]        at MySqlSelectBase.execute (file:///app/node_modules/drizzle-orm/mysql-core/query-builders/select.js:805:27)
+2026-04-25T21:22:40.478655686Z [err]        at MySqlSelectBase.then (file:///app/node_modules/drizzle-orm/query-promise.js:21:17)
+2026-04-25T21:22:40.478662258Z [err]        at process.processTicksAndRejections (node:internal/process/task_queues:103:5) {
+2026-04-25T21:22:40.478663013Z [err]    }
+2026-04-25T21:22:40.478671519Z [err]  }
+2026-04-25T21:22:40.478671643Z [err]      code: 'ER_NO_SUCH_TABLE',
+2026-04-25T21:22:40.478678072Z [err]      errno: 1146,
+2026-04-25T21:22:40.478686666Z [err]      sqlState: '42S02',
+2026-04-25T21:23:00.479501986Z [err]  [Auth] Missing session cookie
+2026-04-25T21:23:00.479507566Z [err]  Error getting profile: DrizzleQueryError: Failed query: select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit ?
+2026-04-25T21:23:00.479511770Z [err]      at async procedure (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:281:18)
+2026-04-25T21:23:00.479518386Z [err]      at async file:///app/node_modules/@trpc/server/dist/resolveResponse-D7zvnoIM.mjs:1948:18
+2026-04-25T21:23:00.479524570Z [err]      at async Promise.all (index 0)
+2026-04-25T21:23:00.479524959Z [err]      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-04-25T21:23:00.479530754Z [err]      at async MySql2PreparedQuery.execute (file:///app/node_modules/drizzle-orm/mysql2/session.js:78:20)
+2026-04-25T21:23:00.479537343Z [err]    query: 'select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit ?',
+2026-04-25T21:23:00.479537451Z [err]      at async file:///app/dist/index.js:761:24
+2026-04-25T21:23:00.479543038Z [err]      at async resolveMiddleware (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:221:17)
+2026-04-25T21:23:00.479543296Z [err]    params: [ 1 ],
+2026-04-25T21:23:00.480954484Z [err]    cause: Error: Table 'railway.modelProfile' doesn't exist
+2026-04-25T21:23:00.480960381Z [err]      sqlState: '42S02',
+2026-04-25T21:23:00.480964938Z [err]      sqlMessage: "Table 'railway.modelProfile' doesn't exist"
+2026-04-25T21:23:00.480970437Z [err]    }
+2026-04-25T21:23:00.480974646Z [err]        at file:///app/node_modules/drizzle-orm/mysql2/session.js:79:27
+2026-04-25T21:23:00.480976227Z [err]  }
+2026-04-25T21:23:00.480983450Z [err]        at MySql2PreparedQuery.queryWithCache (file:///app/node_modules/drizzle-orm/mysql-core/session.js:23:22)
+2026-04-25T21:23:00.480990374Z [err]        at MySql2PreparedQuery.execute (file:///app/node_modules/drizzle-orm/mysql2/session.js:78:31)
+2026-04-25T21:23:00.480994891Z [err]        at MySqlSelectBase.execute (file:///app/node_modules/drizzle-orm/mysql-core/query-builders/select.js:805:27)
+2026-04-25T21:23:00.480999366Z [err]        at MySqlSelectBase.then (file:///app/node_modules/drizzle-orm/query-promise.js:21:17)
+2026-04-25T21:23:00.481006480Z [err]      code: 'ER_NO_SUCH_TABLE',
+2026-04-25T21:23:00.482151377Z [err]        at file:///app/node_modules/drizzle-orm/mysql2/session.js:79:27
+2026-04-25T21:23:00.482167028Z [err]  params: 1
+2026-04-25T21:23:00.482172803Z [err]      at MySql2PreparedQuery.queryWithCache (file:///app/node_modules/drizzle-orm/mysql-core/session.js:25:15)
+2026-04-25T21:23:00.482176626Z [err]      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-04-25T21:23:00.482179474Z [err]      at async MySql2PreparedQuery.execute (file:///app/node_modules/drizzle-orm/mysql2/session.js:78:20)
+2026-04-25T21:23:00.482185363Z [err]      at async resolveMiddleware (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:221:17)
+2026-04-25T21:23:00.482188225Z [err]      at async callRecursive (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:256:18)
+2026-04-25T21:23:00.482195997Z [err]      at async procedure (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:281:18)
+2026-04-25T21:23:00.482198771Z [err]      at async file:///app/node_modules/@trpc/server/dist/resolveResponse-D7zvnoIM.mjs:1948:18
+2026-04-25T21:23:00.482201847Z [err]      at async Promise.all (index 0)
+2026-04-25T21:23:00.482204718Z [err]      at async resolveResponse (file:///app/node_modules/@trpc/server/dist/resolveResponse-D7zvnoIM.mjs:2138:20) {
+2026-04-25T21:23:00.482207458Z [err]    query: 'select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit ?',
+2026-04-25T21:23:00.482213092Z [err]    cause: Error: Table 'railway.modelProfile' doesn't exist
+2026-04-25T21:23:00.482215805Z [err]        at PromisePool.query (/app/node_modules/mysql2/lib/promise/pool.js:36:22)
+2026-04-25T21:23:00.484021010Z [err]        at MySql2PreparedQuery.queryWithCache (file:///app/node_modules/drizzle-orm/mysql-core/session.js:23:22)
+2026-04-25T21:23:00.484027020Z [err]        at MySql2PreparedQuery.execute (file:///app/node_modules/drizzle-orm/mysql2/session.js:78:31)
+2026-04-25T21:23:00.484032606Z [err]        at MySqlSelectBase.execute (file:///app/node_modules/drizzle-orm/mysql-core/query-builders/select.js:805:27)
+2026-04-25T21:23:00.484039390Z [err]        at process.processTicksAndRejections (node:internal/process/task_queues:103:5) {
+2026-04-25T21:23:00.484043043Z [err]      code: 'ER_NO_SUCH_TABLE',
+2026-04-25T21:23:00.484046407Z [err]      errno: 1146,
+2026-04-25T21:23:00.484053482Z [err]      sqlState: '42S02',
+2026-04-25T21:23:00.484057471Z [err]      sqlMessage: "Table 'railway.modelProfile' doesn't exist"
+2026-04-25T21:23:02.432467044Z [err]      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-04-25T21:23:02.432479684Z [err]      at async file:///app/dist/index.js:761:24
+2026-04-25T21:23:02.432486325Z [err]      at async resolveMiddleware (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:221:17)
+2026-04-25T21:23:02.432492847Z [err]      at async callRecursive (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:256:18)
+2026-04-25T21:23:02.432497469Z [err]      at async procedure (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:281:18)
+2026-04-25T21:23:02.432502162Z [err]      at async file:///app/node_modules/@trpc/server/dist/resolveResponse-D7zvnoIM.mjs:1948:18
+2026-04-25T21:23:02.432507176Z [err]      at async Promise.all (index 0)
+2026-04-25T21:23:02.432514948Z [err]      at async resolveResponse (file:///app/node_modules/@trpc/server/dist/resolveResponse-D7zvnoIM.mjs:2138:20) {
+2026-04-25T21:23:02.432524195Z [err]  params: 1
+2026-04-25T21:23:02.432530893Z [err]    params: [ 1 ],
+2026-04-25T21:23:02.432534849Z [err]    cause: Error: Table 'railway.modelProfile' doesn't exist
+2026-04-25T21:23:02.433909573Z [err]        at PromisePool.query (/app/node_modules/mysql2/lib/promise/pool.js:36:22)
+2026-04-25T21:23:02.433924197Z [err]        at MySql2PreparedQuery.queryWithCache (file:///app/node_modules/drizzle-orm/mysql-core/session.js:23:22)
+2026-04-25T21:23:02.433928773Z [err]        at MySql2PreparedQuery.execute (file:///app/node_modules/drizzle-orm/mysql2/session.js:78:31)
+2026-04-25T21:23:02.433933575Z [err]        at MySqlSelectBase.execute (file:///app/node_modules/drizzle-orm/mysql-core/query-builders/select.js:805:27)
+2026-04-25T21:23:02.433938439Z [err]        at MySqlSelectBase.then (file:///app/node_modules/drizzle-orm/query-promise.js:21:17)
+2026-04-25T21:23:02.433947178Z [err]      code: 'ER_NO_SUCH_TABLE',
+2026-04-25T21:23:02.433951503Z [err]      errno: 1146,
+2026-04-25T21:23:02.433960650Z [err]      sqlState: '42S02',
+2026-04-25T21:23:02.433964587Z [err]      sqlMessage: "Table 'railway.modelProfile' doesn't exist"
+2026-04-25T21:23:02.433969057Z [err]    }
+2026-04-25T21:23:02.433973252Z [err]  }
+2026-04-25T21:23:03.844851949Z [err]  Error getting profile: DrizzleQueryError: Failed query: select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit ?
+2026-04-25T21:23:03.844860271Z [err]      at MySql2PreparedQuery.queryWithCache (file:///app/node_modules/drizzle-orm/mysql-core/session.js:25:15)
+2026-04-25T21:23:03.844875098Z [err]      at async callRecursive (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:256:18)
+2026-04-25T21:23:03.844877922Z [err]      at async procedure (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:281:18)
+2026-04-25T21:23:03.844886547Z [err]      at async Promise.all (index 0)
+2026-04-25T21:23:03.844891930Z [err]    query: 'select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit ?',
+2026-04-25T21:23:03.844897001Z [err]    cause: Error: Table 'railway.modelProfile' doesn't exist
+2026-04-25T21:23:03.846202143Z [err]        at PromisePool.query (/app/node_modules/mysql2/lib/promise/pool.js:36:22)
+2026-04-25T21:23:03.846209789Z [err]        at file:///app/node_modules/drizzle-orm/mysql2/session.js:79:27
+2026-04-25T21:23:03.846213302Z [err]        at MySql2PreparedQuery.queryWithCache (file:///app/node_modules/drizzle-orm/mysql-core/session.js:23:22)
+2026-04-25T21:23:03.846216571Z [err]        at MySql2PreparedQuery.execute (file:///app/node_modules/drizzle-orm/mysql2/session.js:78:31)
+2026-04-25T21:23:03.846229033Z [err]        at process.processTicksAndRejections (node:internal/process/task_queues:103:5) {
+2026-04-25T21:23:03.846252941Z [err]  }
+2026-04-25T21:23:04.916919063Z [err]  [Auth] Missing session cookie
+2026-04-25T21:23:14.493112665Z [err]      at async file:///app/node_modules/@trpc/server/dist/resolveResponse-D7zvnoIM.mjs:1948:18
+2026-04-25T21:23:14.493125389Z [err]    query: 'select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit ?',
+2026-04-25T21:23:14.493184376Z [err]  Error getting profile: DrizzleQueryError: Failed query: select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit ?
+2026-04-25T21:23:14.493189697Z [err]  params: 1
+2026-04-25T21:23:14.493193932Z [err]      at MySql2PreparedQuery.queryWithCache (file:///app/node_modules/drizzle-orm/mysql-core/session.js:25:15)
+2026-04-25T21:23:14.493198484Z [err]      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-04-25T21:23:14.493203697Z [err]      at async MySql2PreparedQuery.execute (file:///app/node_modules/drizzle-orm/mysql2/session.js:78:20)
+2026-04-25T21:23:14.493208264Z [err]      at async file:///app/dist/index.js:761:24
+2026-04-25T21:23:14.494661666Z [err]        at PromisePool.query (/app/node_modules/mysql2/lib/promise/pool.js:36:22)
+2026-04-25T21:23:14.494668989Z [err]    }
+2026-04-25T21:23:14.494677292Z [err]        at MySql2PreparedQuery.queryWithCache (file:///app/node_modules/drizzle-orm/mysql-core/session.js:23:22)
+2026-04-25T21:23:14.494683514Z [err]        at MySql2PreparedQuery.execute (file:///app/node_modules/drizzle-orm/mysql2/session.js:78:31)
+2026-04-25T21:23:14.494689820Z [err]        at MySqlSelectBase.execute (file:///app/node_modules/drizzle-orm/mysql-core/query-builders/select.js:805:27)
+2026-04-25T21:23:14.494698156Z [err]      errno: 1146,
+2026-04-25T21:23:14.494706919Z [err]      sql: 'select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit 1',
+2026-04-25T21:23:14.494712092Z [err]      sqlState: '42S02',
+2026-04-25T21:23:14.494715294Z [err]      sqlMessage: "Table 'railway.modelProfile' doesn't exist"
+2026-04-25T21:23:15.480532147Z [err]  Error getting profile: DrizzleQueryError: Failed query: select `id`, `name`, `age`, `city`, `bio`, `profilePhoto`, `coverPhoto`, `subscriptionPrice`, `subscribers`, `whatsappNumber`, `breKey`, `isLive`, `lastLiveTime`, `createdAt`, `updatedAt` from `modelProfile` limit ?
+2026-04-25T21:23:15.480555113Z [err]      at async callRecursive (file:///app/node_modules/@trpc/server/dist/initTRPC-DGaJyg8t.mjs:256:18)
+2026-04-25T21:23:15.482078895Z [err]        at PromisePool.query (/app/node_modules/mysql2/lib/promise/pool.js:36:22)
+2026-04-25T21:23:15.482106133Z [err]      code: 'ER_NO_SUCH_TABLE',
